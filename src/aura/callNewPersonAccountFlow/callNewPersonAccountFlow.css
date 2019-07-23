@@ -1,0 +1,10 @@
+.THIS .flowWidth{
+    width: 100% !important;
+}
+
+.THIS .exampleHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}

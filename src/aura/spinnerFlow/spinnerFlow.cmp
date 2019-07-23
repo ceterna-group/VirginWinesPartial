@@ -1,0 +1,3 @@
+<aura:component access="global" implements="lightning:availableForFlowScreens">
+    <lightning:spinner alternativeText="Loading" size="large" class="exampleHolder"/>
+</aura:component>

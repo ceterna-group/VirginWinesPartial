@@ -1,0 +1,75 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference" access="global" controller="newPersonAccountMantikiInvocableClass">
+
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <aura:attribute name="accountId" type="String" default=""/>
+    <aura:attribute name="firstName" type="String" default=""/>
+    <aura:attribute name="lastName" type="String" default=""/>
+    <aura:attribute name="salutationOutput" type="String" default=""/>
+    <aura:attribute name="storeOutput" type="String" default=""/>
+    <aura:attribute name="tel1" type="String" default=""/>
+    <aura:attribute name="tel2" type="String" default=""/>
+    <aura:attribute name="tel3" type="String" default=""/>
+    <aura:attribute name="emailAddress" type="String" default=""/>
+    <aura:attribute name="DateBirthday" type="Date" default=""/>
+    <aura:attribute name="allowContact" type="Boolean" default=""/>
+
+    <aura:attribute name="methodName" type="String" default="personAccountCreation true"/>
+    <aura:attribute name="body" type="String" default="personAccountCreation"/>
+    <aura:attribute name="statusCode" type="Integer"/>
+
+    <aura:attribute name="isPersonAccount" type="Boolean"/>
+    <aura:attribute name="error" type="Boolean"/>
+    <aura:attribute name="loading" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <aura:if isTrue="{!v.isPersonAccount}">
+        <div aura:id="editDialog" role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading--medium">New Person Account</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium slds-grid">
+                    <lightning:flow aura:id="flowData" class="flowWidth" onstatuschange="{!c.statusChange}"/>
+                </div>
+            </div>
+        </div>
+
+        <div aura:id="overlay" class="slds-backdrop slds-backdrop--open"></div>
+
+    </aura:if>
+<!--
+    <aura:if isTrue="{!v.error}">
+        <div style="height:640px">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Error Message</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <b><h1>Callout Request to Mantiki was not successful.</h1></b>
+                        <p><b><h3>Callout Response details below.</h3></b></p>
+                        <p><b><h3>Please make necessary corrections and try to run the Flow again.</h3></b></p>
+
+                        <p>Status Code: {!v.statusCode}</p>
+                        <p>Error Message: {!v.body}</p>
+                    </div>
+                    <footer class="slds-modal__footer slds-modal__footer_directional">
+                        <lightning:button label="Close" title="Neutral action" onclick="{! c.cancelAction }"/>
+                        <lightning:button label="Return" title="Neutral action" onclick="{! c.restartFlow }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+    -->
+
+    <aura:if isTrue="{!v.loading}">
+        <lightning:spinner alternativeText="Loading" size="large" class="exampleHolder"/>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>
