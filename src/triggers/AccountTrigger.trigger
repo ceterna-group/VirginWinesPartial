@@ -8,8 +8,4 @@ trigger AccountTrigger on Account (after update, after insert) {
             AccountTriggerHandler.AfterInsertHandle(trigger.new);
         }
     }
-    // this
-    // jhkjhfd
-
-    // hj jhb
 }

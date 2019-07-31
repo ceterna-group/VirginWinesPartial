@@ -16,8 +16,8 @@ global with sharing class AccountProcess {
             newAccount.Salutation = tempResponse.Title;
         }
         newAccount.Phone = tempResponse.Telephone_1;
-        newAccount.PersonHomePhone = tempResponse.Telephone_2;
-        newAccount.PersonOtherPhone = tempResponse.Telephone_3;
+        newAccount.Telephone_2__c = tempResponse.Telephone_2;
+        newAccount.Telephone_3__c = tempResponse.Telephone_3;
         if(!String.isBlank(tempResponse.Date_Of_Birth)){
             newAccount.PersonBirthdate = date.parse(tempResponse.Date_Of_Birth);
         }

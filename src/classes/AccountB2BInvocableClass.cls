@@ -55,7 +55,7 @@ public class AccountB2BInvocableClass {
 				//PREPARE BODY OF THE REQUEST
 				mapToSerialize.put('salesforceId',account.Id);
 				mapToSerialize.put('store', 'vwshop');
-				mapToSerialize.put('emailAddress', account.Name.replaceAll('[^a-zA-Z0-9\\s+]', '').replaceAll( '\\s+', '') + '@corpvirginwines.co.uk');
+				mapToSerialize.put('emailAddress', account.Name.replaceAll('[^a-zA-Z0-9\\s+]', '').replaceAll( '\\s+', '').toLowerCase() + '@corpvirginwines.co.uk');
 				mapToSerialize.put('title', 'Mr');
 				mapToSerialize.put('firstName',account.Name);
 				mapToSerialize.put('lastName',account.Name);
