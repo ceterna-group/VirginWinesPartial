@@ -71,7 +71,7 @@
                     });
                     $C.set('v.emails',emails);
                     $C.set('v.customerKeys',customerKeys);
-                    $H.getSubjects($C,customerKeys);
+                    // $H.getSubjects($C,customerKeys);
                 }
             });
             $A.enqueueAction(getEmails);
@@ -86,6 +86,8 @@
             console.log('will trigger');
 
             var emailId = $E.currentTarget.getAttribute('data-emailid');
+
+            console.log('sending id ' + emailId);
 
             var getEmailBody = $C.get('c.getEmailBodyMarkup');
             getEmailBody.setParams({emailId : emailId});

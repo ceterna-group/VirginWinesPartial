@@ -72,7 +72,7 @@ public class EmailHistoryController {
         }
 
         HttpResponse emailSubjectCallout = doSoapCallout('TriggeredSendDefinition',
-                new List<String>{'EmailSubject','Email.ID','CustomerKey','FromAddress','FromName'},
+                new List<String>{'EmailSubject','Email.ID','CustomerKey','FromAddress','FromName','CategoryID'},
                 new List<String>{'CustomerKey::' + (customerKeys.size() == 1 ? 'equals' : 'IN') + filterStrings});
 
         if (emailSubjectCallout.getStatusCode() == 200){
@@ -92,8 +92,8 @@ public class EmailHistoryController {
         Object response  = 'ERROR';
 
         HttpResponse emailBodyCallout = doSoapCallout('Email',
-                new List<String>{'HTMLBody','ID'},
-                new List<String>{'ID::equals::\'' + emailId + '\''});
+                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody'},
+                new List<String>{'ID::equals::' + emailId});
 
         if (emailBodyCallout.getStatusCode() == 200){
             // parse the sent event objects into JSON
@@ -102,7 +102,8 @@ public class EmailHistoryController {
             response                = JSON.deserializeUntyped(bodyString);
         }
 
-        return response;
+//        return response;
+        return emailBodyCallout.getBody();
     }
 
     // helper method to construct XML callout

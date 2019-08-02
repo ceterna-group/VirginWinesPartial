@@ -1,4 +1,4 @@
-@isTest
+@isTest(SeeAllData=false)
 private class Trig_Object_Test {
 
     // UPDATE: as at 31/07/2019 the purpose of this test class is not known
@@ -30,9 +30,10 @@ private class Trig_Object_Test {
         insert newContact;
         
         Lead lead = new Lead (
+            FirstName   = 'Test',
             LastName        = 'MC Test',
             Company         = 'Test Company',
-            Email           = 'mctest@mail.com',
+            Email           = 'mctestload@mail.com',
             Status          = 'Open',
             Industry        = 'Banking',
             MobilePhone     = '07776736763',
