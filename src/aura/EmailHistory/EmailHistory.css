@@ -2,13 +2,11 @@
  * Created by ronanwilliams on 2019-07-30.
  */
 
-.THIS.emailPanel {
-
-}
+.THIS.emailPanel {}
 
 .THIS .rowGrid {
     display: grid;
-    grid-template-columns: 5% 25% 20% 40% 10%;
+    grid-template-columns: 5% 25% 60% 10%;
     padding-bottom: 3px;
     padding-top: 3px;
     border-bottom: 0.3px solid #d7d7d7;
@@ -22,6 +20,46 @@
     background-color: #f4f4f4;
 }
 
+.THIS.iframeModal {
+    position: fixed;
+    height: 65%;
+    width: 80%;
+    top: 27%;
+    left: 10%;
+    z-index: 10;
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border: 0.5px solid grey;
+}
+
+.THIS.modalBackdrop {
+    background-color: white;
+    opacity: 0.8;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.THIS .buttonPanel {
+    height: 35px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 4px;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.THIS .previewPanel {
+    height: calc(100% - 39px);
+}
+
+
+
 .THIS .spinner > div {
     width: 8px;
     height: 8px;
@@ -30,6 +68,12 @@
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.THIS .noSpill {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .THIS .spinner .bounce1 {

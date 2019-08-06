@@ -35,7 +35,9 @@ public class EmailHistoryController {
         if (subscriberKey != '' && emailString != null){
 
             HttpResponse sendEventCallout = doSoapCallout('DataExtensionObject[CustomerSentEmailData]',
-                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID','TriggeredSendCustomerKey','EventDate'},
+                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
+                                'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
+                                'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
 
             if (sendEventCallout.getStatusCode() == 200) {
@@ -46,7 +48,9 @@ public class EmailHistoryController {
             }
 
             HttpResponse openEventCallout = doSoapCallout('DataExtensionObject[CustomerOpenEmailData]',
-                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID','TriggeredSendCustomerKey','EventDate'},
+                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
+                            'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
+                            'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
 
             if (openEventCallout.getStatusCode() == 200) {
@@ -61,39 +65,19 @@ public class EmailHistoryController {
     }
 
     @AuraEnabled
-    public static Object getEmailSubjects(String[] customerKeys){
-
-        // define default response object
-        Object response  = 'ERROR';
-
-        String filterStrings = '';
-        for (String customerKey : customerKeys){
-            filterStrings += '::' + customerKey;
-        }
-
-        HttpResponse emailSubjectCallout = doSoapCallout('TriggeredSendDefinition',
-                new List<String>{'EmailSubject','Email.ID','CustomerKey','FromAddress','FromName','CategoryID'},
-                new List<String>{'CustomerKey::' + (customerKeys.size() == 1 ? 'equals' : 'IN') + filterStrings});
-
-        if (emailSubjectCallout.getStatusCode() == 200){
-            // parse the sent event objects into JSON
-            Dom.Document doc        = emailSubjectCallout.getBodyDocument();
-            String openEventString  = XmlToJson.parseDocumentToJson(doc);
-            response                = JSON.deserializeUntyped(openEventString);
-        }
-
-        return response;
-    }
-
-    @AuraEnabled
     public static Object getEmailBodyMarkup(String emailId){
 
         // define default response object
         Object response  = 'ERROR';
 
         HttpResponse emailBodyCallout = doSoapCallout('Email',
-                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody'},
-                new List<String>{'ID::equals::' + emailId});
+                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
+//                new List<String>{'ID::equals::' + emailId});
+//                new List<String>{'ID::equals::90967'});
+//                new List<String>{'ID::equals::73716'});
+//                new List<String>{'ID::equals::73632'});
+                new List<String>{'ID::equals::90967'});
+//                new List<String>{'ObjectID::equals::90967'});
 
         if (emailBodyCallout.getStatusCode() == 200){
             // parse the sent event objects into JSON
@@ -102,8 +86,8 @@ public class EmailHistoryController {
             response                = JSON.deserializeUntyped(bodyString);
         }
 
-//        return response;
-        return emailBodyCallout.getBody();
+        return response;
+//        return emailBodyCallout.getBody();
     }
 
     // helper method to construct XML callout

@@ -38,7 +38,9 @@
                                     JobId : sendData[x].Properties.Property[3].Value,
                                     ObjectId : sendData[x].Properties.Property[2].Value,
                                     SubscriberKey : sendData[x].Properties.Property[4].Value,
-                                    Subject : '',
+                                    Name : sendData[x].Properties.Property[9].Value,
+                                    Subject : sendData[x].Properties.Property[10].Value,
+                                    EmailId : sendData[x].Properties.Property[13].Value,
                                     From : '',
                                     Status : 'Sent',
                                     Opened : false
@@ -71,7 +73,7 @@
                     });
                     $C.set('v.emails',emails);
                     $C.set('v.customerKeys',customerKeys);
-                    // $H.getSubjects($C,customerKeys);
+                    $C.set('v.responsePending',false);
                 }
             });
             $A.enqueueAction(getEmails);
@@ -79,33 +81,37 @@
     },
     getEmailBody : function($C,$E,$H){
 
-        console.log('bodyget');
+        var emailId = $E.currentTarget.getAttribute('data-emailid');
 
-        if ($E.currentTarget.getAttribute('data-emailid')){
+        if (emailId){
+            var emailBodies = $C.get('v.emailBodies');
+            if (emailBodies[emailId]){
+                $C.set('v.preview',emailBodies[emailId]);
+                $C.set('v.previewing',true);
+                $C.set('v.previewId',emailId);
+            } else {
+                var getEmailBody = $C.get('c.getEmailBodyMarkup');
+                getEmailBody.setParams({emailId : emailId});
+                getEmailBody.setCallback(this, function(response){
+                    console.log(response.getState());
+                    console.log(response.getReturnValue());
 
-            console.log('will trigger');
-
-            var emailId = $E.currentTarget.getAttribute('data-emailid');
-
-            console.log('sending id ' + emailId);
-
-            var getEmailBody = $C.get('c.getEmailBodyMarkup');
-            getEmailBody.setParams({emailId : emailId});
-            getEmailBody.setCallback(this, function(response){
-                console.log('callback');
-
-                console.log(response.getState());
-                console.log(response.getReturnValue());
-            });
-            $A.enqueueAction(getEmailBody);
-
-            // $E.currentTarget.setAttribute('data-hello','goobye');
-            // console.log('mtd called');
-            // console.log($E.currentTarget.getAttribute('data-emailId'));
-
-
-
+                    var responseData    = response.getReturnValue();
+                    if (responseData.Body && responseData.Body.RetrieveResponseMsg &&
+                        responseData.Body.RetrieveResponseMsg.Results &&
+                        responseData.Body.RetrieveResponseMsg.Results.HTMLBody){
+                        var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
+                        emailBodies[emailId] = URL.createObjectURL(blob);
+                        $C.set('v.preview',emailBodies[emailId]);
+                        $C.set('v.previewing',true);
+                        $C.set('v.previewId',emailId);
+                    }
+                });
+                $A.enqueueAction(getEmailBody);
+            }
         }
+    },
+    closePreview : function($C,$E,$H){
+        $C.set('v.previewing',false);
     }
-
 });
