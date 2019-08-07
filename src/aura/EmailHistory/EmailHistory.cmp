@@ -26,7 +26,7 @@
 
     <aura:if isTrue="{!v.responsePending}">
         <div style="height:50px">
-            <lightning:spinner />
+            <lightning:spinner variant="brand"/>
         </div>
     </aura:if>
 
@@ -43,6 +43,8 @@
 <!--        </div>-->
 <!--    </aura:if>-->
 
+
+
     <aura:if isTrue="{!and(v.emails.length > 0,not(v.responsePending))}">
         <div class="emailPanel">
             <div class="rowGrid headerRow">
@@ -53,6 +55,7 @@
             </div>
             <div>
                 <aura:iteration items="{!v.emails}" var="email">
+                    <div>
                     <div class="rowGrid detailRow" onclick="{!c.getEmailBody}"
                          data-emailid="{!email.EmailId}" >
                         <div>
@@ -61,49 +64,17 @@
                         </div>
                         <div class="noSpill">{!email.DateString}</div>
                         <div>
-
-                            <div>
-                                some text {!email.EmailId == v.previewId ? 'SOME TEXT' : ''} some more
-
-                                {!email.EmailId == v.previewId ? 'SOME TEXT' : ''}
-
-                                <aura:if isTrue="{!email.EmailId == v.previewId}">
-
-                                    HERE'S a whole bunch of text
-
-                                    <!--                        <div class="">-->
-
-                                    <!--                            email should show here-->
-                                    <!--&lt;!&ndash;                            <iframe src="{!v.preview}" width="100%" height="100%"></iframe>&ndash;&gt;-->
-                                    <!--                        </div>-->
-
-                                </aura:if>
-
-
-                            </div>
-
                             <div class="noSpill"><strong>{!email.Name}</strong></div>
                             <div class="noSpill">{!email.Subject}</div>
                         </div>
                         <div class="noSpill">{!email.Status}</div>
-
-
-
                     </div>
-<!--                    {!email.EmailId == v.previewId ? 'SOME TEXT' : ''}-->
-
-
-                    <aura:if isTrue="{!email.EmailId == v.previewId}">
-
-                        HERE'S a whole bunch of text
-
-<!--                        <div class="">-->
-
-<!--                            email should show here-->
-<!--&lt;!&ndash;                            <iframe src="{!v.preview}" width="100%" height="100%"></iframe>&ndash;&gt;-->
-<!--                        </div>-->
-
-                    </aura:if>
+                        <aura:if isTrue="{!email.EmailId == v.previewId}">
+                            <div>
+                                <iframe src="{!v.preview}" width="100%" height="100%" class="iframeBody"></iframe>
+                            </div>
+                        </aura:if>
+                    </div>
 
                 </aura:iteration>
             </div>

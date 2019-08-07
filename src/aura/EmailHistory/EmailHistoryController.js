@@ -81,14 +81,16 @@
     },
     getEmailBody : function($C,$E,$H){
 
-        var emailId = $E.currentTarget.getAttribute('data-emailid');
+        var emailId = parseInt($E.currentTarget.getAttribute('data-emailid'));
+
+        $C.set('v.previewId',emailId);
 
         if (emailId){
             var emailBodies = $C.get('v.emailBodies');
             if (emailBodies[emailId]){
                 $C.set('v.preview',emailBodies[emailId]);
-                $C.set('v.previewing',true);
-                $C.set('v.previewId',emailId);
+                // $C.set('v.previewing',true);
+                // $C.set('v.previewId',emailId);
             } else {
                 var getEmailBody = $C.get('c.getEmailBodyMarkup');
                 getEmailBody.setParams({emailId : emailId});
@@ -103,8 +105,8 @@
                         var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
                         emailBodies[emailId] = URL.createObjectURL(blob);
                         $C.set('v.preview',emailBodies[emailId]);
-                        $C.set('v.previewing',true);
-                        $C.set('v.previewId',emailId);
+                        // $C.set('v.previewing',true);
+                        // $C.set('v.previewId',emailId);
                     }
                 });
                 $A.enqueueAction(getEmailBody);
