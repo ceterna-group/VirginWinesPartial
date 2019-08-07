@@ -4,12 +4,16 @@
 
 .THIS.emailPanel {}
 
+.THIS .row {
+    border-bottom: 0.3px solid #d7d7d7;
+    position: relative;
+}
+
 .THIS .rowGrid {
     display: grid;
     grid-template-columns: 5% 25% 60% 10%;
     padding-bottom: 3px;
     padding-top: 3px;
-    border-bottom: 0.3px solid #d7d7d7;
 }
 
 .THIS .detailRow {
@@ -18,6 +22,10 @@
 
 .THIS .detailRow:hover {
     background-color: #f4f4f4;
+}
+
+.THIS .iframeDiv {
+    padding: 5px;
 }
 
 .THIS .iframeBody{

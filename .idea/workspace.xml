@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10ba72c3-bd1d-4224-bb8f-c85dac724ccb" name="Default Changelist" comment="5.08.2019">
+    <list default="true" id="10ba72c3-bd1d-4224-bb8f-c85dac724ccb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/AccountProcess.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/AccountProcess.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,7 +43,7 @@
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
@@ -66,40 +64,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/MyProfilePageController.cls">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/MultiRequestMock.cls">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
@@ -110,7 +74,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/AccountProcess.cls">
+        <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js">
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
@@ -136,6 +116,8 @@
     <findStrings>
       <find>definitions</find>
       <find>--</find>
+      <find>previewId</find>
+      <find>customerKeys</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,11 +134,11 @@
         <option value="$PROJECT_DIR$/src/classes/AccountB2BInvocableClass.cls" />
         <option value="$PROJECT_DIR$/src/classes/Trig_Object_Test.cls" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js" />
-        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" />
-        <option value="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" />
-        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" />
         <option value="$PROJECT_DIR$/src/classes/AccountProcess.cls" />
+        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" />
+        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" />
+        <option value="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" />
       </list>
     </option>
   </component>
@@ -193,7 +175,7 @@
                       <entry key="APEXCLASS:TRIG_OBJECT_TEST" value="1564586009000" />
                       <entry key="APEXCLASS:XMLTOJSON" value="1564478026262" />
                       <entry key="APEXTRIGGER:ACCOUNTTRIGGER" value="1564414523000" />
-                      <entry key="AURADEFINITIONBUNDLE:EMAILHISTORY" value="1565091634713" />
+                      <entry key="AURADEFINITIONBUNDLE:EMAILHISTORY" value="1565162977501" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -205,8 +187,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1182" />
-    <option name="y" value="-877" />
+    <option name="x" value="-1027" />
+    <option name="y" value="-985" />
     <option name="width" value="1440" />
     <option name="height" value="796" />
   </component>
@@ -347,7 +329,7 @@
       <workItem from="1565012863067" duration="137000" />
       <workItem from="1565013048107" duration="10024000" />
       <workItem from="1565104351644" duration="413000" />
-      <workItem from="1565104810010" duration="629000" />
+      <workItem from="1565104810010" duration="5358000" />
     </task>
     <task id="LOCAL-00001" summary="git INIT">
       <created>1563881778322</created>
@@ -370,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564738111176</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="6.08.2019">
+      <created>1565109661776</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565109661776</updated>
+    </task>
+    <task id="LOCAL-00005" summary="7.08.2019 am">
+      <created>1565161342891</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565161342891</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -400,7 +396,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110025000" />
+    <option name="totallyTimeSpent" value="114754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1182" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -461,7 +457,9 @@
     <MESSAGE value="31.07.2019" />
     <MESSAGE value="1.08.2019 am" />
     <MESSAGE value="5.08.2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.08.2019" />
+    <MESSAGE value="6.08.2019" />
+    <MESSAGE value="7.08.2019 am" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.08.2019 am" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/VirginWines_Partial$Trig_Object_Test.null" NAME="VirginWines Partial Coverage Results" MODIFIED="1564585733227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="VirginWines Partial" CONNECTION_NAME="VirginWines Partial" CONNECTION_TYPE="MDAPI" />
@@ -553,31 +551,6 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/MyProfilePageController.cls">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
-      <provider editor-type-id="text-editor" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
       <provider editor-type-id="text-editor" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
@@ -587,17 +560,21 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/AccountProcess.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/MyProfilePageController.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
@@ -606,6 +583,27 @@
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+      <provider editor-type-id="text-editor" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
   </component>
   <component name="masterDetails">

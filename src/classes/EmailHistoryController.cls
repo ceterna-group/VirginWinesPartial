@@ -1,10 +1,23 @@
-/**
- * Created by ronanwilliams on 2019-07-29.
+
+/*
+ * @class ODIRequest
+ * Created by ronan williams on 2019-07-29.
+ * @desc - Sends a request to ODI, to retrieve data.
+ *   Each request also sends a log to the ODI logging system for traceability.
  */
 
 public class EmailHistoryController {
 
-
+    /*
+     * @method getEmailHistory()
+     * @desc - Used to retrieve email information for a custom lightning component.
+     * @param {String} sObjectType - used to fetch the sObject type which contains the component (can be
+     *                  any of Person Account, Contact or Lead
+     * @param {String} recordId - id passed by the force:recordId attribute in the component.
+     * @param {String} emailField - because the component can be used on multiple sObjects, a design parameter on
+     *                  the component is used to determine which field to check for the records' email address.
+     * @return {Object} - returns a JSON string containing information from Marketing Cloud about emails sent and opened.
+     */
     @AuraEnabled
     public static Object getEmailHistory(String sObjectType, String recordId, String emailField){
 
@@ -73,11 +86,7 @@ public class EmailHistoryController {
         HttpResponse emailBodyCallout = doSoapCallout('Email',
                 new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
 //                new List<String>{'ID::equals::' + emailId});
-//                new List<String>{'ID::equals::90967'});
-//                new List<String>{'ID::equals::73716'});
-//                new List<String>{'ID::equals::73632'});
                 new List<String>{'ID::equals::90967'});
-//                new List<String>{'ObjectID::equals::90967'});
 
         if (emailBodyCallout.getStatusCode() == 200){
             // parse the sent event objects into JSON
@@ -87,10 +96,19 @@ public class EmailHistoryController {
         }
 
         return response;
-//        return emailBodyCallout.getBody();
     }
 
-    // helper method to construct XML callout
+
+    /*
+     * @method doSoapCallout()
+     * @desc - Used to construct the XML body of the soap callout to marketing cloud.
+     * @param {String} sObjectType - used to fetch the sObject type which contains the component (can be
+     *                  any of Person Account, Contact or Lead
+     * @param {String} recordId - id passed by the force:recordId attribute in the component.
+     * @param {String} emailField - because the component can be used on multiple sObjects, a design parameter on
+     *                  the component is used to determine which field to check for the records' email address.
+     * @return {Object} - returns a JSON string containing information from Marketing Cloud about emails sent and opened.
+     */
     @TestVisible
     private static HttpResponse doSoapCallout(String objectType, String[] properties, String[] filters){
 

@@ -83,6 +83,7 @@
 
         var emailId = parseInt($E.currentTarget.getAttribute('data-emailid'));
 
+        $C.set('v.preview',null);
         $C.set('v.previewId',emailId);
 
         if (emailId){
@@ -113,7 +114,13 @@
             }
         }
     },
-    closePreview : function($C,$E,$H){
-        $C.set('v.previewing',false);
+    resizeIframe : function ($C,$E,$H) {
+
+        // console.log($E.currentTarget.contentWindow.innerHeight);
+
+        // $E.currentTarget.style.height = $E.currentTarget.contentWindow.document.body.scrollHeight + 'px';
+            // '1000px';//obj.contentWindow.document.body.scrollHeight + 'px';
+        $E.currentTarget.style.height = '500px';
     }
+
 });

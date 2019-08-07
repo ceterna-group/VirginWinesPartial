@@ -10,6 +10,7 @@
     <aura:attribute name="EmailField" type="String" />
     <aura:attribute name="emails" type="Object[]" />
     <aura:attribute name="emailBodies" type="Object[]" />
+
     <aura:attribute name="customerKeys" type="String[]" />
 
 
@@ -17,6 +18,8 @@
 
 
     <aura:attribute name="preview" type="String" />
+
+
     <aura:attribute name="previewing" type="Boolean" default="false"/>
 
     <aura:attribute name="responsePending" type="Boolean" default="true"/>
@@ -25,29 +28,13 @@
 
 
     <aura:if isTrue="{!v.responsePending}">
-        <div style="height:50px">
-            <lightning:spinner variant="brand"/>
-        </div>
+        <div style="height:50px"><lightning:spinner variant="brand"/></div>
     </aura:if>
-
-
-<!--    <aura:if isTrue="{!and(v.preview,v.previewing)}">-->
-<!--        <div class="modalBackdrop" onclick="{!c.closePreview}"></div>-->
-<!--        <div class="iframeModal">-->
-<!--            <div class="buttonPanel">-->
-<!--                <lightning:button onclick="{!c.closePreview}" label="CLOSE"/>-->
-<!--            </div>-->
-<!--            <div class="previewPanel">-->
-<!--                <iframe src="{!v.preview}" width="100%" height="100%"></iframe>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </aura:if>-->
-
 
 
     <aura:if isTrue="{!and(v.emails.length > 0,not(v.responsePending))}">
         <div class="emailPanel">
-            <div class="rowGrid headerRow">
+            <div class="row rowGrid headerRow">
                 <div></div>
                 <div>DATE</div>
                 <div>DETAILS</div>
@@ -55,23 +42,30 @@
             </div>
             <div>
                 <aura:iteration items="{!v.emails}" var="email">
-                    <div>
-                    <div class="rowGrid detailRow" onclick="{!c.getEmailBody}"
-                         data-emailid="{!email.EmailId}" >
-                        <div>
-                            <lightning:icon iconName="{!email.Opened ? 'utility:email_open' : 'utility:email'}"
-                                            size="small" variant="{!email.Opened ? 'warning' : ''}"/>
-                        </div>
-                        <div class="noSpill">{!email.DateString}</div>
-                        <div>
-                            <div class="noSpill"><strong>{!email.Name}</strong></div>
-                            <div class="noSpill">{!email.Subject}</div>
-                        </div>
-                        <div class="noSpill">{!email.Status}</div>
-                    </div>
-                        <aura:if isTrue="{!email.EmailId == v.previewId}">
+                    <div class="row">
+                        <div class="rowGrid detailRow" onclick="{!c.getEmailBody}"
+                             data-emailid="{!email.EmailId}"
+                             tyle="{!and(v.previewId,v.previewId != email.EmailId) ? 'opacity:0.5' : ''}">
                             <div>
-                                <iframe src="{!v.preview}" width="100%" height="100%" class="iframeBody"></iframe>
+                                <lightning:icon iconName="{!email.Opened ? 'utility:email_open' : 'utility:email'}"
+                                                size="small" variant="{!email.Opened ? 'warning' : ''}"/>
+                            </div>
+                            <div class="noSpill">{!email.DateString}</div>
+                            <div>
+                                <div class="noSpill"><strong>{!email.Name}</strong></div>
+                                <div class="noSpill">{!email.Subject}</div>
+                            </div>
+                            <div class="noSpill">{!email.Status}</div>
+                        </div>
+                        <aura:if isTrue="{!email.EmailId == v.previewId}">
+                            <aura:if isTrue="{!not(v.preview)}">
+                                <div style="height:50px;z-index: 9;position: relative;">
+                                    <lightning:spinner variant="brand"/>
+                                </div>
+                            </aura:if>
+                            <div class="iframeDiv">
+                                <iframe src="{!v.preview}" width="100%" height="50px" class="iframeBody"
+                                        onload="{!c.resizeIframe}"></iframe>
                             </div>
                         </aura:if>
                     </div>
