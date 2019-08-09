@@ -11,26 +11,16 @@
     <aura:attribute name="emails" type="Object[]" />
     <aura:attribute name="emailBodies" type="Object[]" />
 
-    <aura:attribute name="customerKeys" type="String[]" />
-
-
     <aura:attribute name="previewId" type="String" />
-
-
     <aura:attribute name="preview" type="String" />
-
-
-    <aura:attribute name="previewing" type="Boolean" default="false"/>
 
     <aura:attribute name="responsePending" type="Boolean" default="true"/>
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
-
     <aura:if isTrue="{!v.responsePending}">
         <div style="height:50px"><lightning:spinner variant="brand"/></div>
     </aura:if>
-
 
     <aura:if isTrue="{!and(v.emails.length > 0,not(v.responsePending))}">
         <div class="emailPanel">
@@ -69,7 +59,6 @@
                             </div>
                         </aura:if>
                     </div>
-
                 </aura:iteration>
             </div>
         </div>

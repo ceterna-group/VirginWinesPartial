@@ -105,6 +105,10 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="EmailHistoryControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="ForgotPasswordController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>

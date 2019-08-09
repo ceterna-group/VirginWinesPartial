@@ -1,3 +1,10 @@
+
+/*
+ * @class XmlToJson
+ * Created by ronan williams on 2019-07-29.
+ * @desc - Used to convert XML to JSON.
+ */
+
 global class XmlToJson {
 
     //  Try to determine some data types by pattern

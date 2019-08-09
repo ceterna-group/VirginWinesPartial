@@ -23,7 +23,6 @@
 
                     var responseData    = response.getReturnValue();
                     var emailMap        = new Map();
-                    var customerKeys    = [];
                     var sent            = responseData['SEND'];
 
                     if (sent && sent.Body && sent.Body.RetrieveResponseMsg &&
@@ -45,9 +44,6 @@
                                     Status : 'Sent',
                                     Opened : false
                                 });
-                            if (sendData[x].Properties.Property[4].Value){
-                                customerKeys.push(sendData[x].Properties.Property[4].Value);
-                            }
                         }
                     }
 
@@ -72,7 +68,6 @@
                        return b.Date - a.Date
                     });
                     $C.set('v.emails',emails);
-                    $C.set('v.customerKeys',customerKeys);
                     $C.set('v.responsePending',false);
                 }
             });
@@ -90,8 +85,6 @@
             var emailBodies = $C.get('v.emailBodies');
             if (emailBodies[emailId]){
                 $C.set('v.preview',emailBodies[emailId]);
-                // $C.set('v.previewing',true);
-                // $C.set('v.previewId',emailId);
             } else {
                 var getEmailBody = $C.get('c.getEmailBodyMarkup');
                 getEmailBody.setParams({emailId : emailId});
@@ -106,8 +99,9 @@
                         var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
                         emailBodies[emailId] = URL.createObjectURL(blob);
                         $C.set('v.preview',emailBodies[emailId]);
-                        // $C.set('v.previewing',true);
-                        // $C.set('v.previewId',emailId);
+
+                        console.log(responseData.Body.RetrieveResponseMsg.Results.HTMLBody);
+
                     }
                 });
                 $A.enqueueAction(getEmailBody);
@@ -115,12 +109,9 @@
         }
     },
     resizeIframe : function ($C,$E,$H) {
+        // $E.currentTarget.style.height = '500px';
 
-        // console.log($E.currentTarget.contentWindow.innerHeight);
 
-        // $E.currentTarget.style.height = $E.currentTarget.contentWindow.document.body.scrollHeight + 'px';
-            // '1000px';//obj.contentWindow.document.body.scrollHeight + 'px';
-        $E.currentTarget.style.height = '500px';
     }
 
 });

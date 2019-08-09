@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10ba72c3-bd1d-4224-bb8f-c85dac724ccb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls-meta.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VirginWines Partial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VirginWines Partial.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/XmlToJson.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/XmlToJson.cls" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +46,7 @@
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
@@ -83,8 +86,14 @@
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+          <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
@@ -104,11 +113,11 @@
         <option value="FxmlFile" />
         <option value="Lightning Component" />
         <option value="Lightning Controller" />
-        <option value="Apex Class" />
-        <option value="Apex Metadata" />
         <option value="Lightning Design" />
         <option value="Lightning Style" />
         <option value="Lightning Helper" />
+        <option value="Apex Class" />
+        <option value="Apex Metadata" />
       </list>
     </option>
   </component>
@@ -117,7 +126,9 @@
       <find>definitions</find>
       <find>--</find>
       <find>previewId</find>
+      <find>previewing</find>
       <find>customerKeys</find>
+      <find>responsePending</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,16 +140,17 @@
         <option value="$PROJECT_DIR$/src/triggers/test.java" />
         <option value="$PROJECT_DIR$/src/triggers/test.fxml" />
         <option value="$PROJECT_DIR$/src/triggers/AccountTrigger.trigger" />
-        <option value="$PROJECT_DIR$/src/classes/XmlToJson.cls" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.design" />
         <option value="$PROJECT_DIR$/src/classes/AccountB2BInvocableClass.cls" />
         <option value="$PROJECT_DIR$/src/classes/Trig_Object_Test.cls" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js" />
         <option value="$PROJECT_DIR$/src/classes/AccountProcess.cls" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" />
+        <option value="$PROJECT_DIR$/src/classes/XmlToJson.cls" />
+        <option value="$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls" />
         <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp" />
-        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" />
         <option value="$PROJECT_DIR$/src/classes/EmailHistoryController.cls" />
+        <option value="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js" />
       </list>
     </option>
   </component>
@@ -148,7 +160,7 @@
         <entry key="VirginWines Partial">
           <value>
             <ModuleWorkspaceSettings>
-              <option name="moduleContentsLastModified" value="1564483387468" />
+              <option name="moduleContentsLastModified" value="1565168507650" />
             </ModuleWorkspaceSettings>
           </value>
         </entry>
@@ -171,11 +183,12 @@
                     <map>
                       <entry key="APEXCLASS:ACCOUNTB2BINVOCABLECLASS" value="1564565555392" />
                       <entry key="APEXCLASS:ACCOUNTPROCESS" value="1565087135000" />
-                      <entry key="APEXCLASS:EMAILHISTORYCONTROLLER" value="1565076961000" />
+                      <entry key="APEXCLASS:EMAILHISTORYCONTROLLER" value="1565170431621" />
+                      <entry key="APEXCLASS:EMAILHISTORYCONTROLLERTEST" value="1565168842000" />
                       <entry key="APEXCLASS:TRIG_OBJECT_TEST" value="1564586009000" />
-                      <entry key="APEXCLASS:XMLTOJSON" value="1564478026262" />
+                      <entry key="APEXCLASS:XMLTOJSON" value="1565168572000" />
                       <entry key="APEXTRIGGER:ACCOUNTTRIGGER" value="1564414523000" />
-                      <entry key="AURADEFINITIONBUNDLE:EMAILHISTORY" value="1565162977501" />
+                      <entry key="AURADEFINITIONBUNDLE:EMAILHISTORY" value="1565170187000" />
                     </map>
                   </option>
                 </ConnectionWorkspaceSettings>
@@ -187,10 +200,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1027" />
-    <option name="y" value="-985" />
     <option name="width" value="1440" />
-    <option name="height" value="796" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -200,7 +211,32 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="VirginWines Partial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VirginWines Partial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VirginWines Partial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VirginWines Partial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VirginWines Partial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VirginWines Partial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -218,7 +254,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -329,7 +365,7 @@
       <workItem from="1565012863067" duration="137000" />
       <workItem from="1565013048107" duration="10024000" />
       <workItem from="1565104351644" duration="413000" />
-      <workItem from="1565104810010" duration="5358000" />
+      <workItem from="1565104810010" duration="10795000" />
     </task>
     <task id="LOCAL-00001" summary="git INIT">
       <created>1563881778322</created>
@@ -366,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565161342891</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="7.08.2019 am">
+      <created>1565167504786</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565167504786</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -396,10 +439,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114754000" />
+    <option name="totallyTimeSpent" value="120191000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1182" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.39297125" />
@@ -551,11 +594,6 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
-      <provider editor-type-id="text-editor" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/MultiRequestMock.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
@@ -576,13 +614,34 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
+    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
+      <provider editor-type-id="text-editor" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls">
+      <provider editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+      <provider editor-type-id="text-editor" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
@@ -592,18 +651,13 @@
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
+    <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
-      <provider editor-type-id="text-editor" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
   </component>
   <component name="masterDetails">

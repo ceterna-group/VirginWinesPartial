@@ -1,9 +1,8 @@
 
 /*
- * @class ODIRequest
+ * @class EmailHistoryController
  * Created by ronan williams on 2019-07-29.
- * @desc - Sends a request to ODI, to retrieve data.
- *   Each request also sends a log to the ODI logging system for traceability.
+ * @desc - used as controller for <c:EmailHistory> lightning component.
  */
 
 public class EmailHistoryController {
@@ -77,6 +76,12 @@ public class EmailHistoryController {
         return responseMap;
     }
 
+    /*
+     * @method getEmailBodyMarkup()
+     * @desc - retrieves the HTML body of a given email in Marketing Cloud
+     * @param {String} emailId - the id of the email record in Marketing Cloud
+     * @return {Object} - HttpResponse body converted JSON response
+     */
     @AuraEnabled
     public static Object getEmailBodyMarkup(String emailId){
 
@@ -87,6 +92,7 @@ public class EmailHistoryController {
                 new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
 //                new List<String>{'ID::equals::' + emailId});
                 new List<String>{'ID::equals::90967'});
+//                new List<String>{'ID::equals::91054'});
 
         if (emailBodyCallout.getStatusCode() == 200){
             // parse the sent event objects into JSON
@@ -102,12 +108,10 @@ public class EmailHistoryController {
     /*
      * @method doSoapCallout()
      * @desc - Used to construct the XML body of the soap callout to marketing cloud.
-     * @param {String} sObjectType - used to fetch the sObject type which contains the component (can be
-     *                  any of Person Account, Contact or Lead
-     * @param {String} recordId - id passed by the force:recordId attribute in the component.
-     * @param {String} emailField - because the component can be used on multiple sObjects, a design parameter on
-     *                  the component is used to determine which field to check for the records' email address.
-     * @return {Object} - returns a JSON string containing information from Marketing Cloud about emails sent and opened.
+     * @param {String} objectType - the soap api Object reference
+     * @param {String[]} properties - list of object properties to be retrieved by the soap call.
+     * @param {String} filters - any query filters to be applied to the query.
+     * @return {HttpResponse} - returns the HttpResponse from the soap callout
      */
     @TestVisible
     private static HttpResponse doSoapCallout(String objectType, String[] properties, String[] filters){
