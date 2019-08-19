@@ -90,8 +90,8 @@ public class EmailHistoryController {
 
         HttpResponse emailBodyCallout = doSoapCallout('Email',
                 new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
-//                new List<String>{'ID::equals::' + emailId});
-                new List<String>{'ID::equals::90967'});
+                new List<String>{'ID::equals::' + emailId});
+//                new List<String>{'ID::equals::90967'});
 //                new List<String>{'ID::equals::91054'});
 
         if (emailBodyCallout.getStatusCode() == 200){
