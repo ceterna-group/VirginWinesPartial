@@ -88,20 +88,31 @@ public class EmailHistoryController {
         // define default response object
         Object response  = 'ERROR';
 
-        HttpResponse emailBodyCallout = doSoapCallout('Email',
-                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
-                new List<String>{'ID::equals::' + emailId});
-//                new List<String>{'ID::equals::90967'});
-//                new List<String>{'ID::equals::91054'});
+        Http callout = new Http();
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint('https://mcp-tdn-c0l602t4nkc4hjyh22c4.rest.marketingcloudapis.com/asset/v1/content/assets/' + emailId);
+        req.setHeader('Authorization','');
+        req.setMethod('GET');
+        HttpResponse res = callout.send(req);
 
-        if (emailBodyCallout.getStatusCode() == 200){
-            // parse the sent event objects into JSON
-            Dom.Document doc        = emailBodyCallout.getBodyDocument();
-            String bodyString       = XmlToJson.parseDocumentToJson(doc);
-            response                = JSON.deserializeUntyped(bodyString);
-        }
+        system.debug(res.getStatus());
+        system.debug(res.getBody());
 
-        return response;
+
+//        HttpResponse emailBodyCallout = doSoapCallout('Email',
+//                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
+//                new List<String>{'ID::equals::' + emailId});
+////                new List<String>{'ID::equals::90967'});
+////                new List<String>{'ID::equals::91054'});
+//
+//        if (emailBodyCallout.getStatusCode() == 200){
+//            // parse the sent event objects into JSON
+//            Dom.Document doc        = emailBodyCallout.getBodyDocument();
+//            String bodyString       = XmlToJson.parseDocumentToJson(doc);
+//            response                = JSON.deserializeUntyped(bodyString);
+//        }
+
+        return res;
     }
 
 

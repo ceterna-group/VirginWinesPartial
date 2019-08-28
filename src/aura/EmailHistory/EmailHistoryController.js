@@ -81,6 +81,8 @@
         $C.set('v.preview',null);
         $C.set('v.previewId',emailId);
 
+        console.log(emailId);
+
         if (emailId){
             var emailBodies = $C.get('v.emailBodies');
             if (emailBodies[emailId]){
@@ -93,16 +95,18 @@
                     console.log(response.getReturnValue());
 
                     var responseData    = response.getReturnValue();
-                    if (responseData.Body && responseData.Body.RetrieveResponseMsg &&
-                        responseData.Body.RetrieveResponseMsg.Results &&
-                        responseData.Body.RetrieveResponseMsg.Results.HTMLBody){
-                        var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
-                        emailBodies[emailId] = URL.createObjectURL(blob);
-                        $C.set('v.preview',emailBodies[emailId]);
 
-                        console.log(responseData.Body.RetrieveResponseMsg.Results.HTMLBody);
-
-                    }
+                    console.log(responseData);
+                    // if (responseData.Body && responseData.Body.RetrieveResponseMsg &&
+                    //     responseData.Body.RetrieveResponseMsg.Results &&
+                    //     responseData.Body.RetrieveResponseMsg.Results.HTMLBody){
+                    //     var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
+                    //     emailBodies[emailId] = URL.createObjectURL(blob);
+                    //     $C.set('v.preview',emailBodies[emailId]);
+                    //
+                    //     console.log(responseData.Body.RetrieveResponseMsg.Results.HTMLBody);
+                    //
+                    // }
                 });
                 $A.enqueueAction(getEmailBody);
             }
