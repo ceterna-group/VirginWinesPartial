@@ -1,4 +1,3 @@
-
 /*
  * @class XmlToJson
  * Created by ronan williams on 2019-07-29.

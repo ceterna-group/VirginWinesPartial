@@ -1,4 +1,3 @@
-
 /*
  * @class EmailHistoryController
  * Created by ronan williams on 2019-07-29.
@@ -48,8 +47,9 @@ public class EmailHistoryController {
 
             HttpResponse sendEventCallout = doSoapCallout('DataExtensionObject[CustomerSentEmailData]',
                     new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
-                                'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
-                                'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
+                            'ID','CorrelationID',
+                            'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
+                            'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
 
             if (sendEventCallout.getStatusCode() == 200) {
@@ -61,6 +61,7 @@ public class EmailHistoryController {
 
             HttpResponse openEventCallout = doSoapCallout('DataExtensionObject[CustomerOpenEmailData]',
                     new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
+                            'ID','CorrelationID',
                             'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
                             'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
@@ -88,16 +89,16 @@ public class EmailHistoryController {
         // define default response object
         Object response  = 'ERROR';
 
-        Http callout = new Http();
+        String accessToken = getToken();
+
+
         HttpRequest req = new HttpRequest();
         req.setEndpoint('https://mcp-tdn-c0l602t4nkc4hjyh22c4.rest.marketingcloudapis.com/asset/v1/content/assets/' + emailId);
-        req.setHeader('Authorization','');
         req.setMethod('GET');
-        HttpResponse res = callout.send(req);
-
-        system.debug(res.getStatus());
-        system.debug(res.getBody());
-
+        req.setHeader('Authorization', 'Bearer ' + accessToken);
+        Http http = new Http();
+        HTTPResponse res = http.send(req);
+        System.debug(res.getBody());
 
 //        HttpResponse emailBodyCallout = doSoapCallout('Email',
 //                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
@@ -182,6 +183,33 @@ public class EmailHistoryController {
 
        return subscriberKeyResponse;
 
+    }
+
+    public static String getToken() {
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint('https://mcp-tdn-c0l602t4nkc4hjyh22c4.auth.marketingcloudapis.com/v2/token');
+        req.setMethod('POST');
+        req.setHeader('Content-Type', 'application/json');
+        Map<String, String> params = new Map<String, String>();
+        params.put('grant_type', 'client_credentials');
+        params.put('client_id', 'spzkfzsanck0ew9lkpl79wo6');
+        params.put('client_secret', 'VOSaL3J4wEA1YgPKFgjcns02');
+        params.put('scope', 'documents_and_images_read');
+        params.put('account_id', '6261229');
+        req.setBody(JSON.serialize(params));
+        Http http = new Http();
+        HTTPResponse res = http.send(req);
+
+        if (res.getStatusCode() == 200){
+            Map<String,Object> resMap = ( Map<String,Object> ) JSON.deserializeUntyped(res.getBody());
+            if (resMap.containsKey('access_token')){
+                return (String)resMap.get('access_token');
+            } else {
+                return 'error';
+            }
+        } else {
+            return 'error';
+        }
     }
 
 }

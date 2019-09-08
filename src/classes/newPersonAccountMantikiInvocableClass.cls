@@ -114,8 +114,8 @@ global without sharing class newPersonAccountMantikiInvocableClass {
 				newAccount.Phone = flowInputs[0].tel1;
 				newAccount.Telephone_2__c = flowInputs[0].tel2;
 				newAccount.Telephone_3__c = flowInputs[0].tel3;
-				newAccount.PersonHomePhone = flowInputs[0].tel2;
-				newAccount.PersonOtherPhone = flowInputs[0].tel3;
+				//newAccount.PersonHomePhone = flowInputs[0].tel2;
+				//newAccount.PersonOtherPhone = flowInputs[0].tel3;
 				newAccount.Sync_Status__c = 'Processing';
 				newAccount.Allow_Contact__c =  flowInputs[0].AllowMarketingCommunications;
 				newAccount.RecordTypeId =  recTypeId;

@@ -1,6 +1,6 @@
 public class CalloutsClass{
     public CalloutsClass() {
-        
+
     }
 
     public static final String CANCEL = 'cancel';
@@ -12,12 +12,12 @@ public class CalloutsClass{
 
     public static void accountCreationUpdate(String account, boolean creation)    {
         Account tempAccount = (Account) JSON.deserialize(account, Account.class);
-	    System.debug('tempAccount');
+        System.debug('tempAccount');
         System.debug(tempAccount);
         try {
-	        if(tokenRefreshed == FALSE){
-		        mantikiSettings = SettingsClass.getSettings();
-	        }
+            if(tokenRefreshed == FALSE){
+                mantikiSettings = SettingsClass.getSettings();
+            }
 
             if(mantikiSettings.Message__c.startsWith(SettingsClass.BEGIN_PHRASE))  {
                 //PREPARE JSON TO BE SEND
@@ -62,12 +62,12 @@ public class CalloutsClass{
                 }
                 //TREATMENT OF RESPONSE
                 if(response.getStatusCode() >= 400 && response.getStatusCode()<=500)    {
-	                // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
-	                mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
-	                if(tokenRefreshed == TRUE){
-		                //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
-		                accountCreationUpdate(account, creation);
-	                }else{
+                    // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
+                    mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
+                    if(tokenRefreshed == TRUE){
+                        //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
+                        accountCreationUpdate(account, creation);
+                    }else{
                         if(creation) {
 
                             Account findAccount = [SELECT Id, Name FROM Account WHERE id = :tempAccount.Id];
@@ -78,7 +78,7 @@ public class CalloutsClass{
                             }
                         }
                         CalloutRecord.insertCalloutRecordError('CalloutsClass', 'accountCreationUpdate '+creation, InterfaceClass.saveRequest, response,null,tempAccount.Id);
-	                }
+                    }
                 }else{
                     if(creation)    {
                         ResponseClass responseValue = new ResponseClass();
@@ -109,9 +109,9 @@ public class CalloutsClass{
     public static void individualUpdate(String individual, String mantikiCustomerID, String store)  {
         Individual tempIndividual = (Individual) JSON.deserialize(individual, Individual.class);
         try {
-	        if(tokenRefreshed == FALSE){
-		        mantikiSettings = SettingsClass.getSettings();
-	        }
+            if(tokenRefreshed == FALSE){
+                mantikiSettings = SettingsClass.getSettings();
+            }
             if(mantikiSettings.Message__c.startsWith(SettingsClass.BEGIN_PHRASE))  {
                 //PREPARE JSON TO BE SEND
                 Map<String,Object> mapToSerialize = new Map<String,Object>();
@@ -160,14 +160,14 @@ public class CalloutsClass{
                 }
                 //TREATMENT OF RESPONSE
                 if(response.getStatusCode() >= 400 && response.getStatusCode()<=500)    {
-	                // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
-	                mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
-	                if(tokenRefreshed == TRUE){
-		                //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
-		                individualUpdate(individual, mantikiCustomerID, store);
-	                }else{
+                    // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
+                    mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
+                    if(tokenRefreshed == TRUE){
+                        //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
+                        individualUpdate(individual, mantikiCustomerID, store);
+                    }else{
                         CalloutRecord.insertCalloutRecordError('CalloutsClass', 'individualUpdate', InterfaceClass.saveRequest, response,null,tempIndividual.Id);
-	                }
+                    }
                 }else{
                     CalloutRecord.insertCalloutRecordSuccess('CalloutsClass', 'individualUpdate', InterfaceClass.saveRequest, response,null,tempIndividual.Id);
                 }
@@ -268,14 +268,14 @@ public class CalloutsClass{
                 }
                 //TREATMENT OF RESPONSE
                 if(response.getStatusCode() >= 400 && response.getStatusCode()<=500)    {
-	                // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
-	                mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
-	                if(tokenRefreshed == TRUE){
-		                //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
-		                winebankUpdate(winebank, customerAccountID, action);
-	                }else{
+                    // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
+                    mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
+                    if(tokenRefreshed == TRUE){
+                        //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
+                        winebankUpdate(winebank, customerAccountID, action);
+                    }else{
                         CalloutRecord.insertCalloutRecordError('CalloutsClass', 'winebankUpdate '+action, InterfaceClass.saveRequest, response,null,tempWinebank.Id);
-	                }
+                    }
                 }else{
                     CalloutRecord.insertCalloutRecordSuccess('CalloutsClass', 'winebankUpdate '+action, InterfaceClass.saveRequest, response,null,tempWinebank.Id);
                 }
@@ -296,9 +296,9 @@ public class CalloutsClass{
         System.debug('winebankNew ' + winebankNew);
 
         try{
-	        if(tokenRefreshed == FALSE){
-		        mantikiSettings = SettingsClass.getSettings();
-	        }
+            if(tokenRefreshed == FALSE){
+                mantikiSettings = SettingsClass.getSettings();
+            }
             if(mantikiSettings.Message__c.startsWith(SettingsClass.BEGIN_PHRASE))  {
                 //CALLOUT
                 Map<String,String> connectionDetails = new Map<String,String>();
@@ -314,14 +314,14 @@ public class CalloutsClass{
                 }
                 //TREATMENT OF RESPONSE
                 if(response.getStatusCode() >= 400 && response.getStatusCode()<=500)    {
-	                // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
-	                mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
-	                if(tokenRefreshed == TRUE) {
-		                //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
-						returnString = getWinebank(winebank);
-	                }else{
+                    // REST CALLOUT: IF TOKEN IS INVALID GET A NEW ONE FROM MANTIKI
+                    mantikiSettings = tokenRefresh(response.getBody(), mantikiSettings);
+                    if(tokenRefreshed == TRUE) {
+                        //CALL METHOD WITHIN ITSELF TO RESTART THE PROCESS OF SENDING A REQUEST TO MANTIKI :
+                        returnString = getWinebank(winebank);
+                    }else{
                         CalloutRecord.insertCalloutRecordError('CalloutsClass', 'getWinebank '+HISTORY, InterfaceClass.saveRequest, response,null,winebankNew.Id);
-	                }
+                    }
                 }else{
                     CalloutRecord.insertCalloutRecordSuccess('CalloutsClass', 'getWinebank '+HISTORY, InterfaceClass.saveRequest, response,null,winebankNew.Id);
                     returnString = response.getBody();
@@ -333,7 +333,7 @@ public class CalloutsClass{
             System.debug('Error::'+e.getMessage());
             CalloutRecord.insertCalloutRecordError('CalloutsClass', 'getWinebank', null, null,e.getMessage()+ '\n'+ e.getStackTraceString(),null);
         }
-		System.debug('returnString ' + returnString);
+        System.debug('returnString ' + returnString);
         return returnString;
     }
 
@@ -360,8 +360,8 @@ public class CalloutsClass{
                 mapToSerialize.put('corporate',tempAccount.Corporate__c);
                 mapToSerialize.put('lastName',tempAccount.LastName);
                 mapToSerialize.put('telephone1',tempAccount.Phone);
-                mapToSerialize.put('telephone2',tempAccount.PersonHomePhone);
-                mapToSerialize.put('telephone3',tempAccount.PersonOtherPhone);
+                mapToSerialize.put('telephone2',tempAccount.Telephone_2__c);
+                mapToSerialize.put('telephone3',tempAccount.Telephone_3__c);
 
                 jsonVar = JSON.serialize(mapToSerialize);
                 System.debug('json var');
@@ -399,32 +399,32 @@ public class CalloutsClass{
                             updateAccount.Sync_Status__c = 'Error';
                             if(response.getStatusCode() == 208) {
                                 updateAccount.Person_Account_Duplicated__c = true;
-                            } /*else {
-                                if(updateAccount != null) {
-                                    System.debug('**** Report type: **** ');
-                                    System.debug(recTypeId); //TO DO DELETE
+                            } //else {
+                            //if(updateAccount != null) {
+                            //   System.debug('**** Report type: **** ');
+                            //   System.debug(recTypeId); //TO DO DELETE
 
-                                    updateAccount.RecordTypeId = recTypeId;
-                                    updateAccount.Sync_Status__c = 'Error';
-                                    update updateAccount;
-                                }
-                            }*/
+                            //   updateAccount.RecordTypeId = recTypeId;
+                            //   updateAccount.Sync_Status__c = 'Error';
+                            //   update updateAccount;
+                            // }
+                            //}
                             update updateAccount;
                         }
                     }
                     CalloutRecord.insertCalloutRecordError('CalloutsClass', 'personAccountCreation '+creation, InterfaceClass.saveRequest, response,null,tempAccount.Id);
                     Callout_Record__c calloutRecord = [SELECT Id
-                                                        FROM Callout_Record__c
-                                                        WHERE Class_Name__c = 'CalloutsClass'
-                                                        AND Method_Name__c = 'personAccountCreation true'
-                                                        AND HTTP_Method__c = :InterfaceClass.saveRequest.getMethod()
-                                                        AND Request_End_Point__c = :InterfaceClass.saveRequest.getEndpoint()
-                                                        AND Status_Code__c = :response.getStatusCode()
-                                                        AND Status_Message__c = :response.getStatus()
-                                                        AND Type_Record__c = 'Error'
-                                                        AND Type__c = 'Call Out'
-                                                        AND Object__c = :tempAccount.Id
-                                                        ORDER BY LastModifiedDate DESC LIMIT 1];
+                            FROM Callout_Record__c
+                            WHERE Class_Name__c = 'CalloutsClass'
+                    AND Method_Name__c = 'personAccountCreation true'
+                    AND HTTP_Method__c = :InterfaceClass.saveRequest.getMethod()
+                    AND Request_End_Point__c = :InterfaceClass.saveRequest.getEndpoint()
+                    AND Status_Code__c = :response.getStatusCode()
+                    AND Status_Message__c = :response.getStatus()
+                    AND Type_Record__c = 'Error'
+                    AND Type__c = 'Call Out'
+                    AND Object__c = :tempAccount.Id
+                    ORDER BY LastModifiedDate DESC LIMIT 1];
                     Account updateCalloutRecordField = [SELECT Id, Callout_Error_Record__c FROM Account WHERE id = :tempAccount.Id];
                     updateCalloutRecordField.Callout_Error_Record__c = calloutRecord.Id;
                     updateCalloutRecordField.RecordTypeId = recTypeId;
@@ -466,18 +466,18 @@ public class CalloutsClass{
     }
     //METHOD TO CHECK IF TOKEN IS INVALID, IF SO REFRESH IT FROM MANTIKI USING SettingsClass:
     public static Mantiki__c tokenRefresh (String responseBody, Mantiki__c mantikiSettings)  {
-         ResponseClass responseValue = new ResponseClass();
-         responseValue = (ResponseClass)System.JSON.deserialize(responseBody, ResponseClass.class);
+        ResponseClass responseValue = new ResponseClass();
+        responseValue = (ResponseClass)System.JSON.deserialize(responseBody, ResponseClass.class);
 
-         if(responseValue.error == 'invalid_token' && responseValue.error_description.startsWith('Invalid access token')){
-             tokenRefreshed = TRUE;
-             //REFRESH TOKEN:
-             return SettingsClass.getToken(mantikiSettings);
-         } else{
-             tokenRefreshed = FALSE;
-             return NULL;
-         }
- 	}
+        if(responseValue.error == 'invalid_token' && responseValue.error_description.startsWith('Invalid access token')){
+            tokenRefreshed = TRUE;
+            //REFRESH TOKEN:
+            return SettingsClass.getToken(mantikiSettings);
+        } else{
+            tokenRefreshed = FALSE;
+            return NULL;
+        }
+    }
 
     public class ResponseClass{
         ResponseClass(){
@@ -488,8 +488,8 @@ public class CalloutsClass{
         public String fraudStatus {get;set;}
         public String error {get;set;}
         public String error_description {get;set;}
-		public String error_type {get;set;}
+        public String error_type {get;set;}
         public List<AccountProcess.CreateIndividualWrapper> preferences {get;set;}
     }
-    
+
 }

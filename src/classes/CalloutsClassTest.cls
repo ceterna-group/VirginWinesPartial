@@ -2,7 +2,7 @@
 public class CalloutsClassTest {
 	//ACCOUNT
 	public static Account configAccount(){
-		Id personAccount = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Person Account').getRecordTypeId(); 
+		Id personAccount = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Person Account').getRecordTypeId();
 
 		Account account = new Account();
 		account.Store__c = 'Virgin Wines';
@@ -20,12 +20,12 @@ public class CalloutsClassTest {
 	}
 	//CONTACT
 	public static Contact configContact()	{
-        Contact contact = new Contact(
-            FirstName = 'Test First Name',
-            LastName = 'Test Last Name'
-        );
+		Contact contact = new Contact(
+				FirstName = 'Test First Name',
+				LastName = 'Test Last Name'
+		);
 
-        return contact;
+		return contact;
 	}
 	//CUSTOM SETTING
 	public static void createCustomSetting(){
@@ -53,7 +53,7 @@ public class CalloutsClassTest {
 		Account account = configAccount();
 
 		Test.startTest();
-			insert account;
+		insert account;
 		Test.stopTest();
 
 		System.assertEquals(2,[SELECT Object__c FROM Callout_Record__c WHERE Object__c = :account.Id].size(),
@@ -67,11 +67,11 @@ public class CalloutsClassTest {
 		insert account;
 
 		Test.startTest();
-			update account;
+		update account;
 
-			account.Created_on_Mantiki__c = true;
-			account.Risk_Level__c = 'test';
-			update account;
+		account.Created_on_Mantiki__c = true;
+		account.Risk_Level__c = 'test';
+		update account;
 		Test.stopTest();
 
 		System.assertEquals(4,[SELECT Object__c FROM Callout_Record__c WHERE Object__c = :account.Id].size(),
@@ -87,7 +87,7 @@ public class CalloutsClassTest {
 		String responseBody = '{"error":"invalid_token","error_description":"Invalid access token: Z Z Z Z Z "}';
 
 		Test.startTest();
-			CalloutsClass.tokenRefresh(responseBody, mantikiSettings);
+		CalloutsClass.tokenRefresh(responseBody, mantikiSettings);
 		Test.stopTest();
 
 		System.assertEquals(TRUE, CalloutsClass.tokenRefreshed, 'The TOKEN should have been refreshed by the CalloutsClass.');
@@ -102,7 +102,7 @@ public class CalloutsClassTest {
 		String responseBody = '{"error_category":"Bad Request","error_type":"Invalid state","message":"Subscription not open"}';
 
 		Test.startTest();
-			CalloutsClass.tokenRefresh(responseBody, mantikiSettings);
+		CalloutsClass.tokenRefresh(responseBody, mantikiSettings);
 		Test.stopTest();
 
 		System.assertEquals(FALSE, CalloutsClass.tokenRefreshed, 'The TOKEN should NOT have been refreshed by the CalloutsClass.');
@@ -136,7 +136,7 @@ public class CalloutsClassTest {
 		Test.setMock(HttpCalloutMock.class, fakeMultiResponse);
 
 		Test.startTest();
-			insert account;
+		insert account;
 		Test.stopTest();
 
 		System.assertEquals(2,[SELECT COUNT() FROM Callout_Record__c ],
@@ -239,9 +239,9 @@ public class CalloutsClassTest {
 		Test.setMock(HttpCalloutMock.class, fakeMultiResponse);
 
 		Test.startTest();
-			//Update the Individual to trigger the method: individualUpdate
-			individual.Wine_Advisor_emails__c = 'Weekly';
-			update individual;
+		//Update the Individual to trigger the method: individualUpdate
+		individual.Wine_Advisor_emails__c = 'Weekly';
+		update individual;
 		Test.stopTest();
 
 		System.assertEquals(1,[SELECT COUNT() FROM Individual ],
@@ -338,12 +338,12 @@ public class CalloutsClassTest {
 		insert winebank;
 
 		Test.startTest();
-			//Update #1: Cancel Reason
-			winebank.Cancel_Reason__c = 'Customer Failure - Money/Cannot Afford';
-			//Update #2: Holiday
-			winebank.Holiday_Start_Date__c = Date.today();
-			winebank.Holiday_End_Date__c = Date.today().addDays(1);
-			update winebank;
+		//Update #1: Cancel Reason
+		winebank.Cancel_Reason__c = 'Customer Failure - Money/Cannot Afford';
+		//Update #2: Holiday
+		winebank.Holiday_Start_Date__c = Date.today();
+		winebank.Holiday_End_Date__c = Date.today().addDays(1);
+		update winebank;
 		Test.stopTest();
 
 
@@ -406,7 +406,7 @@ public class CalloutsClassTest {
 		System.assertEquals('{"Name":"test"}', returnString, 'Expected: {"Name":"test"} & ' + 'Actual: ' + returnString);
 
 		//verify Callout_Record__c records
-		System.assertEquals(4,[SELECT Count() FROM Callout_Record__c] ,
+		System.assertEquals(1,[SELECT Count() FROM Callout_Record__c] ,
 				'CalloutsClass should insert a record of Callout Records when receives a Winebank_Membership__c from Mantiki and when a Account is created.');
 	}
 }
