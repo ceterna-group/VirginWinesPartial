@@ -49,13 +49,12 @@
                         </div>
                         <aura:if isTrue="{!email.EmailId == v.previewId}">
                             <aura:if isTrue="{!not(v.preview)}">
-                                <div style="height:50px;z-index: 9;position: relative;">
+                                <div style="height:600px;z-index: 9;position: relative;">
                                     <lightning:spinner variant="brand"/>
                                 </div>
                             </aura:if>
                             <div class="iframeDiv">
-                                <iframe src="{!v.preview}" width="100%" height="50px" class="iframeBody"
-                                        onload="{!c.resizeIframe}"></iframe>
+                                <iframe src="{!v.preview}" width="100%" height="600px" class="iframeBody"></iframe>
                             </div>
                         </aura:if>
                     </div>

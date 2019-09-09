@@ -47,7 +47,6 @@ public class EmailHistoryController {
 
             HttpResponse sendEventCallout = doSoapCallout('DataExtensionObject[CustomerSentEmailData]',
                     new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
-                            'ID','CorrelationID',
                             'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
                             'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
@@ -61,7 +60,6 @@ public class EmailHistoryController {
 
             HttpResponse openEventCallout = doSoapCallout('DataExtensionObject[CustomerOpenEmailData]',
                     new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
-                            'ID','CorrelationID',
                             'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
                             'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
                     new List<String>{'SubscriberKey::equals::' + subscriberKey});
@@ -86,34 +84,18 @@ public class EmailHistoryController {
     @AuraEnabled
     public static Object getEmailBodyMarkup(String emailId){
 
-        // define default response object
-        Object response  = 'ERROR';
-
         String accessToken = getToken();
-
-
+        Http http       = new Http();
         HttpRequest req = new HttpRequest();
-        req.setEndpoint('https://mcp-tdn-c0l602t4nkc4hjyh22c4.rest.marketingcloudapis.com/asset/v1/content/assets/' + emailId);
+        req.setEndpoint('https://mcp-tdn-c0l602t4nkc4hjyh22c4.rest.marketingcloudapis.com/asset/v1/content/assets/' +
+                '?$filter=data.email.legacy.legacyId%20eq%20\'' + emailId + '\'');
         req.setMethod('GET');
         req.setHeader('Authorization', 'Bearer ' + accessToken);
-        Http http = new Http();
-        HTTPResponse res = http.send(req);
-        System.debug(res.getBody());
 
-//        HttpResponse emailBodyCallout = doSoapCallout('Email',
-//                new List<String>{'HTMLBody','ID','Status','Subject','PartnerKey','TextBody','__AdditionalEmailAttribute1'},
-//                new List<String>{'ID::equals::' + emailId});
-////                new List<String>{'ID::equals::90967'});
-////                new List<String>{'ID::equals::91054'});
-//
-//        if (emailBodyCallout.getStatusCode() == 200){
-//            // parse the sent event objects into JSON
-//            Dom.Document doc        = emailBodyCallout.getBodyDocument();
-//            String bodyString       = XmlToJson.parseDocumentToJson(doc);
-//            response                = JSON.deserializeUntyped(bodyString);
-//        }
 
-        return res;
+        HttpResponse res = http.send(req);
+
+        return res.getBody();
     }
 
 
@@ -194,7 +176,7 @@ public class EmailHistoryController {
         params.put('grant_type', 'client_credentials');
         params.put('client_id', 'spzkfzsanck0ew9lkpl79wo6');
         params.put('client_secret', 'VOSaL3J4wEA1YgPKFgjcns02');
-        params.put('scope', 'documents_and_images_read');
+        params.put('scope', 'documents_and_images_read email_read saved_content_read');
         params.put('account_id', '6261229');
         req.setBody(JSON.serialize(params));
         Http http = new Http();

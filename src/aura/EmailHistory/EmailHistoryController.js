@@ -91,31 +91,29 @@
                 var getEmailBody = $C.get('c.getEmailBodyMarkup');
                 getEmailBody.setParams({emailId : emailId});
                 getEmailBody.setCallback(this, function(response){
-                    console.log(response.getState());
-                    console.log(response.getReturnValue());
 
-                    var responseData    = response.getReturnValue();
+                    var result = JSON.parse(response.getReturnValue());
 
-                    console.log(responseData);
-                    // if (responseData.Body && responseData.Body.RetrieveResponseMsg &&
-                    //     responseData.Body.RetrieveResponseMsg.Results &&
-                    //     responseData.Body.RetrieveResponseMsg.Results.HTMLBody){
-                    //     var blob = new Blob([responseData.Body.RetrieveResponseMsg.Results.HTMLBody], {type: "text/html"});
-                    //     emailBodies[emailId] = URL.createObjectURL(blob);
-                    //     $C.set('v.preview',emailBodies[emailId]);
-                    //
-                    //     console.log(responseData.Body.RetrieveResponseMsg.Results.HTMLBody);
-                    //
-                    // }
+                    if (result.items && result.items[0]){
+
+                        // result from MC server
+                        var email = result.items[0];
+                        var html = email.views.html.content;
+                        var slots = email.views.html.slots;
+                        for (var slot in slots) {
+                            html = html.replace(new RegExp('"' + slot + '"', 'g'), '"">' + slots[slot].content + '</div><div');
+                            for (var data in slots[slot].blocks) {
+                                html = html.replace(new RegExp('"' + data + '"', 'g'), '"">' + slots[slot].blocks[data].content + '</div><div')
+                            }
+                        }
+
+                        var blob = new Blob([html], {type: "text/html"});
+                        emailBodies[emailId] = URL.createObjectURL(blob);
+                        $C.set('v.preview',emailBodies[emailId]);
+                    }
                 });
                 $A.enqueueAction(getEmailBody);
             }
         }
-    },
-    resizeIframe : function ($C,$E,$H) {
-        // $E.currentTarget.style.height = '500px';
-
-
     }
-
 });
