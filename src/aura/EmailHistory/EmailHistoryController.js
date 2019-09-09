@@ -58,6 +58,7 @@
                                 var email = emailMap.get(openData[x].Properties.Property[3].Value);
                                 email.Status = 'Opened';
                                 email.Opened = true;
+                                email.OpenDate = new Date(openData[x].Properties.Property[1].Value).toString().substring(0,24);
                                 emailMap.set(openData[x].Properties.Property[3].Value,email);
                             }
                         }
@@ -79,40 +80,46 @@
         var emailId = parseInt($E.currentTarget.getAttribute('data-emailid'));
 
         $C.set('v.preview',null);
-        $C.set('v.previewId',emailId);
 
-        console.log(emailId);
 
-        if (emailId){
-            var emailBodies = $C.get('v.emailBodies');
-            if (emailBodies[emailId]){
-                $C.set('v.preview',emailBodies[emailId]);
-            } else {
-                var getEmailBody = $C.get('c.getEmailBodyMarkup');
-                getEmailBody.setParams({emailId : emailId});
-                getEmailBody.setCallback(this, function(response){
+        if ($C.get('v.previewId') === emailId){
+            $C.set('v.previewId','');
+        } else {
+            $C.set('v.previewId',emailId);
 
-                    var result = JSON.parse(response.getReturnValue());
+            console.log(emailId);
 
-                    if (result.items && result.items[0]){
+            if (emailId){
+                var emailBodies = $C.get('v.emailBodies');
+                if (emailBodies[emailId]){
+                    $C.set('v.preview',emailBodies[emailId]);
+                } else {
+                    var getEmailBody = $C.get('c.getEmailBodyMarkup');
+                    getEmailBody.setParams({emailId : emailId});
+                    getEmailBody.setCallback(this, function(response){
 
-                        // result from MC server
-                        var email = result.items[0];
-                        var html = email.views.html.content;
-                        var slots = email.views.html.slots;
-                        for (var slot in slots) {
-                            html = html.replace(new RegExp('"' + slot + '"', 'g'), '"">' + slots[slot].content + '</div><div');
-                            for (var data in slots[slot].blocks) {
-                                html = html.replace(new RegExp('"' + data + '"', 'g'), '"">' + slots[slot].blocks[data].content + '</div><div')
+                        var result = JSON.parse(response.getReturnValue());
+
+                        if (result.items && result.items[0]){
+
+                            // result from MC server
+                            var email = result.items[0];
+                            var html = email.views.html.content;
+                            var slots = email.views.html.slots;
+                            for (var slot in slots) {
+                                html = html.replace(new RegExp('"' + slot + '"', 'g'), '"">' + slots[slot].content + '</div><div');
+                                for (var data in slots[slot].blocks) {
+                                    html = html.replace(new RegExp('"' + data + '"', 'g'), '"">' + slots[slot].blocks[data].content + '</div><div')
+                                }
                             }
-                        }
 
-                        var blob = new Blob([html], {type: "text/html"});
-                        emailBodies[emailId] = URL.createObjectURL(blob);
-                        $C.set('v.preview',emailBodies[emailId]);
-                    }
-                });
-                $A.enqueueAction(getEmailBody);
+                            var blob = new Blob([html], {type: "text/html"});
+                            emailBodies[emailId] = URL.createObjectURL(blob);
+                            $C.set('v.preview',emailBodies[emailId]);
+                        }
+                    });
+                    $A.enqueueAction(getEmailBody);
+                }
             }
         }
     }

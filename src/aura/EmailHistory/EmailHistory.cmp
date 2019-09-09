@@ -26,26 +26,31 @@
         <div class="emailPanel">
             <div class="row rowGrid headerRow">
                 <div></div>
-                <div>DATE</div>
+                <div>EVENT</div>
                 <div>DETAILS</div>
-                <div>STATUS</div>
             </div>
             <div>
                 <aura:iteration items="{!v.emails}" var="email">
                     <div class="row">
                         <div class="rowGrid detailRow" onclick="{!c.getEmailBody}"
                              data-emailid="{!email.EmailId}"
-                             tyle="{!and(v.previewId,v.previewId != email.EmailId) ? 'opacity:0.5' : ''}">
+                             style="{!and(v.previewId,v.previewId != email.EmailId) ? 'opacity:0.5' : ''}">
                             <div>
                                 <lightning:icon iconName="{!email.Opened ? 'utility:email_open' : 'utility:email'}"
-                                                size="small" variant="{!email.Opened ? 'warning' : ''}"/>
+                                                size="x-small" variant="{!email.Opened ? 'warning' : ''}"/>
                             </div>
-                            <div class="noSpill">{!email.DateString}</div>
+                            <div class="noSpill">
+                                <div>{!'SENT: ' + email.DateString}</div>
+                                <div>{!email.OpenDate ? 'OPENED: ' + email.OpenDate : ''}</div>
+
+
+
+                            </div>
                             <div>
-                                <div class="noSpill"><strong>{!email.Name}</strong></div>
-                                <div class="noSpill">{!email.Subject}</div>
+                                <div class="noSpill"><strong>{!email.Subject}</strong></div>
+                                <div class="noSpill" style="opacity: 0.8;">{!email.Name}</div>
                             </div>
-                            <div class="noSpill">{!email.Status}</div>
+
                         </div>
                         <aura:if isTrue="{!email.EmailId == v.previewId}">
                             <aura:if isTrue="{!not(v.preview)}">
