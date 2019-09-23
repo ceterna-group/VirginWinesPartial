@@ -8,6 +8,7 @@
     <aura:attribute name="recordId" type="String" default="{!v.recordId}"/>
     <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
     <aura:attribute name="EmailField" type="String" />
+    <aura:attribute name="error" type="String" />
     <aura:attribute name="emails" type="Object[]" />
     <aura:attribute name="emailBodies" type="Object[]" />
 
@@ -66,6 +67,10 @@
                 </aura:iteration>
             </div>
         </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!and(v.error != '',not(v.responsePending))}">
+      <p>{!v.error}</p>
     </aura:if>
 
 </aura:component>

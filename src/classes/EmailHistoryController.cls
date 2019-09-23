@@ -24,55 +24,64 @@ public class EmailHistoryController {
         String subscriberKey            = '';
 
         // obtain the email address for the relevant record type and pass the value to the soap xml string method
-        SObject recordObject            = Database.query('SELECT ' + emailField + ' FROM ' + sObjectType + ' WHERE Id = \'' + recordId + '\'');
-        String emailString              = (String)recordObject.getPopulatedFieldsAsMap().get(emailField);
+        try {
+            SObject recordObject            = Database.query('SELECT ' + emailField + ' FROM ' + sObjectType + ' WHERE Id = \'' + recordId + '\'');
+            String emailString              = (String)recordObject.getPopulatedFieldsAsMap().get(emailField);
 
-        // if we can locate an email address for the record check for the subscriber key in Marketing Cloud
-        if (emailString != '' && emailString != null){
-            HttpResponse subsriberKeyCallout = doSoapCallout('Subscriber',
-                    new List<String>{'SubscriberKey'},
-                    new List<String>{'EmailAddress::equals::' + emailString});
+            // if we can locate an email address for the record check for the subscriber key in Marketing Cloud
+            if (emailString != '' && emailString != null){
+                HttpResponse subsriberKeyCallout = doSoapCallout('Subscriber',
+                        new List<String>{'SubscriberKey'},
+                        new List<String>{'EmailAddress::equals::' + emailString});
 
-            if (subsriberKeyCallout.getStatusCode() == 200){
-                String responseString = subsriberKeyCallout.getBody();
+                if (subsriberKeyCallout.getStatusCode() == 200){
+                    String responseString = subsriberKeyCallout.getBody();
 
-                // if the initial soap callout has returned a subscriber key return the value, otherwise return an empty string
-                subscriberKey = responseString.indexOf('<SubscriberKey>')!= -1 ?
-                        responseString.substring(responseString.indexOf('<SubscriberKey>') + 15,responseString.indexOf('</SubscriberKey>')) : '';
-            }
-        }
-
-        // if we have successfully obtained a subscriber key, perform callouts to get sent and opened emails based on the subscriber keys
-        if (subscriberKey != '' && emailString != null){
-
-            HttpResponse sendEventCallout = doSoapCallout('DataExtensionObject[CustomerSentEmailData]',
-                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
-                            'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
-                            'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
-                    new List<String>{'SubscriberKey::equals::' + subscriberKey});
-
-            if (sendEventCallout.getStatusCode() == 200) {
-                // parse the sent event objects into JSON
-                Dom.Document doc        = sendEventCallout.getBodyDocument();
-                String sendEventString  = XmlToJson.parseDocumentToJson(doc);
-                responseMap.put('SEND',JSON.deserializeUntyped(sendEventString));
+                    // if the initial soap callout has returned a subscriber key return the value, otherwise return an empty string
+                    subscriberKey = responseString.indexOf('<SubscriberKey>')!= -1 ?
+                            responseString.substring(responseString.indexOf('<SubscriberKey>') + 15,responseString.indexOf('</SubscriberKey>')) : '';
+                }
+            } else {
+              responseMap.put('ERROR', 'No MC Subscriber Key found for this record.');
             }
 
-            HttpResponse openEventCallout = doSoapCallout('DataExtensionObject[CustomerOpenEmailData]',
-                    new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
-                            'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
-                            'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
-                    new List<String>{'SubscriberKey::equals::' + subscriberKey});
+            // if we have successfully obtained a subscriber key, perform callouts to get sent and opened emails based on the subscriber keys
+            if (subscriberKey != '' && emailString != null){
 
-            if (openEventCallout.getStatusCode() == 200) {
-                // parse the sent event objects into JSON
-                Dom.Document doc        = openEventCallout.getBodyDocument();
-                String openEventString  = XmlToJson.parseDocumentToJson(doc);
-                responseMap.put('OPEN',JSON.deserializeUntyped(openEventString));
+                HttpResponse sendEventCallout = doSoapCallout('DataExtensionObject[CustomerSentEmailData]',
+                        new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
+                                'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
+                                'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
+                        new List<String>{'SubscriberKey::equals::' + subscriberKey});
+
+                if (sendEventCallout.getStatusCode() == 200) {
+                    // parse the sent event objects into JSON
+                    Dom.Document doc        = sendEventCallout.getBodyDocument();
+                    String sendEventString  = XmlToJson.parseDocumentToJson(doc);
+                    responseMap.put('SEND',JSON.deserializeUntyped(sendEventString));
+                }
+
+                HttpResponse openEventCallout = doSoapCallout('DataExtensionObject[CustomerOpenEmailData]',
+                        new List<String>{'SubscriberKey','EventDate','TriggererSendDefinitionObjectID','JobID',
+                                'TriggeredSendCustomerKey','EventDate', 'FromEmail','FromName','JobType',
+                                'JobStatus','EmailName','EmailSubject','SendType','EmailSendDefinition','EmailID'},
+                        new List<String>{'SubscriberKey::equals::' + subscriberKey});
+
+                if (openEventCallout.getStatusCode() == 200) {
+                    // parse the sent event objects into JSON
+                    Dom.Document doc        = openEventCallout.getBodyDocument();
+                    String openEventString  = XmlToJson.parseDocumentToJson(doc);
+                    responseMap.put('OPEN',JSON.deserializeUntyped(openEventString));
+                }
+            } else {
+              responseMap.put('ERROR', 'No MC Subscriber key found for this record.');
             }
-        }
-
+        } catch(Exception e) {
+           responseMap.put('ERROR', e.getMessage());
+        }        
+        
         return responseMap;
+        
     }
 
     /*

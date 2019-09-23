@@ -17,13 +17,17 @@
                 emailField : emailField
             });
             getEmails.setCallback(this,function(response){
-                console.log(response.getReturnValue());
 
                 if (response.getState() === 'SUCCESS' && response.getReturnValue()){
 
                     var responseData    = response.getReturnValue();
                     var emailMap        = new Map();
                     var sent            = responseData['SEND'];
+                    
+                    var error = responseData['ERROR'];
+                    if (error) {
+                      $C.set('v.error', error);
+                    }
 
                     if (sent && sent.Body && sent.Body.RetrieveResponseMsg &&
                         sent.Body.RetrieveResponseMsg.Results){
@@ -63,13 +67,13 @@
                             }
                         }
                     }
-
                     var emails = Array.from(emailMap.values());
                     emails.sort(function(a,b){
                        return b.Date - a.Date
                     });
                     $C.set('v.emails',emails);
                     $C.set('v.responsePending',false);
+
                 }
             });
             $A.enqueueAction(getEmails);
