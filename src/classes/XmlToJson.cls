@@ -85,7 +85,7 @@ global class XmlToJson {
     //  This function converts XML into a native object
     //  If arrays are expected, but not converted automatically, this call may fail
     //  If so, use the parseDocumentToMap function instead and fix any problems
-    global static Object parseDocumentToObject(Dom.Document doc, Type klass) {
-        return JSON.deserialize(parseDocumentToJson(doc), klass);
-    }
+//    global static Object parseDocumentToObject(Dom.Document doc, Type klass) {
+//        return JSON.deserialize(parseDocumentToJson(doc), klass);
+//    }
 }

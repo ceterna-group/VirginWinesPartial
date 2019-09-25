@@ -53,7 +53,16 @@ public class EmailHistoryControllerTest {
             }
             // actual subscriber key value
             when 'ValidSubscriberKey' {
-                mockBody = '<SubscriberKey>1111</SubscriberKey>';
+                mockBody = '<Section>' +
+                        '   <Date> ' + String.valueOf(Date.today()) + '</Date>' +
+                        '   <Date> ' + String.valueOf(Date.today()) + '</Date>' +
+                        '   <DateTime> ' + String.valueOf(Datetime.now()) + '</DateTime>' +
+                        '   <Decimal>3.25</Decimal>' +
+                        '   <SubscriberKey>1111</SubscriberKey>' +
+                        '   <div>' +
+                        '       <span>1111</span>' +
+                        '   </div>' +
+                        '</Section>';
             }
             // email body markup
             when 'EmailBodyMarkup' {
