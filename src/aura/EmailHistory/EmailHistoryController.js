@@ -33,21 +33,41 @@
                         sent.Body.RetrieveResponseMsg.Results){
 
                         var sendData = sent.Body.RetrieveResponseMsg.Results;
-                        for (var x = 0; x < sendData.length; x++){
-                            emailMap.set(sendData[x].Properties.Property[3].Value,
-                                {
-                                    Date : new Date(sendData[x].Properties.Property[1].Value),
-                                    DateString : new Date(sendData[x].Properties.Property[1].Value).toString().substring(0,24),
-                                    JobId : sendData[x].Properties.Property[3].Value,
-                                    ObjectId : sendData[x].Properties.Property[2].Value,
-                                    SubscriberKey : sendData[x].Properties.Property[4].Value,
-                                    Name : sendData[x].Properties.Property[9].Value,
-                                    Subject : sendData[x].Properties.Property[10].Value,
-                                    EmailId : sendData[x].Properties.Property[13].Value,
-                                    From : '',
-                                    Status : 'Sent',
-                                    Opened : false
-                                });
+
+                        if (sendData){
+                            if (sendData.length){
+                                for (var x = 0; x < sendData.length; x++){
+                                    emailMap.set(sendData[x].Properties.Property[3].Value,
+                                        {
+                                            Date : new Date(sendData[x].Properties.Property[1].Value),
+                                            DateString : new Date(sendData[x].Properties.Property[1].Value).toString().substring(0,24),
+                                            JobId : sendData[x].Properties.Property[3].Value,
+                                            ObjectId : sendData[x].Properties.Property[2].Value,
+                                            SubscriberKey : sendData[x].Properties.Property[4].Value,
+                                            Name : sendData[x].Properties.Property[9].Value,
+                                            Subject : sendData[x].Properties.Property[10].Value,
+                                            EmailId : sendData[x].Properties.Property[13].Value,
+                                            From : '',
+                                            Status : 'Sent',
+                                            Opened : false
+                                        });
+                                }
+                            } else {
+                                emailMap.set(sendData.Properties.Property.Value,
+                                    {
+                                        Date : new Date(sendData.Properties.Property[1].Value),
+                                        DateString : new Date(sendData.Properties.Property[1].Value).toString().substring(0,24),
+                                        JobId : sendData.Properties.Property[3].Value,
+                                        ObjectId : sendData.Properties.Property[2].Value,
+                                        SubscriberKey : sendData.Properties.Property[4].Value,
+                                        Name : sendData.Properties.Property[9].Value,
+                                        Subject : sendData.Properties.Property[10].Value,
+                                        EmailId : sendData.Properties.Property[13].Value,
+                                        From : '',
+                                        Status : 'Sent',
+                                        Opened : false
+                                    });
+                            }
                         }
                     }
 
@@ -56,14 +76,27 @@
                         opened.Body.RetrieveResponseMsg.Results){
 
                         var openData = opened.Body.RetrieveResponseMsg.Results;
-                        for (var x = 0; x < openData.length; x++){
 
-                            if (emailMap.has(openData[x].Properties.Property[3].Value)){
-                                var email = emailMap.get(openData[x].Properties.Property[3].Value);
-                                email.Status = 'Opened';
-                                email.Opened = true;
-                                email.OpenDate = new Date(openData[x].Properties.Property[1].Value).toString().substring(0,24);
-                                emailMap.set(openData[x].Properties.Property[3].Value,email);
+                        if (openData){
+                            if (openData.length){
+                                for (var x = 0; x < openData.length; x++){
+
+                                    if (emailMap.has(openData[x].Properties.Property[3].Value)){
+                                        var email = emailMap.get(openData[x].Properties.Property[3].Value);
+                                        email.Status = 'Opened';
+                                        email.Opened = true;
+                                        email.OpenDate = new Date(openData[x].Properties.Property[1].Value).toString().substring(0,24);
+                                        emailMap.set(openData[x].Properties.Property[3].Value,email);
+                                    }
+                                }
+                            } else {
+                                if (emailMap.has(openData.Properties.Property[3].Value)){
+                                    var email = emailMap.get(openData.Properties.Property[3].Value);
+                                    email.Status = 'Opened';
+                                    email.Opened = true;
+                                    email.OpenDate = new Date(openData.Properties.Property[1].Value).toString().substring(0,24);
+                                    emailMap.set(openData.Properties.Property[3].Value,email);
+                                }
                             }
                         }
                     }
@@ -91,8 +124,6 @@
         } else {
             $C.set('v.previewId',emailId);
 
-            console.log(emailId);
-
             if (emailId){
                 var emailBodies = $C.get('v.emailBodies');
                 if (emailBodies[emailId]){
@@ -107,9 +138,9 @@
                         if (result.items && result.items[0]){
 
                             // result from MC server
-                            var email = result.items[0];
-                            var html = email.views.html.content;
-                            var slots = email.views.html.slots;
+                            var email   = result.items[0];
+                            var html    = email.views.html.content;
+                            var slots   = email.views.html.slots;
                             for (var slot in slots) {
                                 html = html.replace(new RegExp('"' + slot + '"', 'g'), '"">' + slots[slot].content + '</div><div');
                                 for (var data in slots[slot].blocks) {
@@ -119,6 +150,10 @@
 
                             var blob = new Blob([html], {type: "text/html"});
                             emailBodies[emailId] = URL.createObjectURL(blob);
+                            $C.set('v.preview',emailBodies[emailId]);
+                        } else {
+
+                            emailBodies[emailId] = URL.createObjectURL(new Blob(['<div>There was an error retrieving the body of this email</div>'],{type: "text/html"}));
                             $C.set('v.preview',emailBodies[emailId]);
                         }
                     });
