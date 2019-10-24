@@ -133,16 +133,21 @@ public class ContactPermissionsInvocableClass {
 
 				jsonVar = '{"contactPreferences" : '+JSON.serialize(mapToSerialize)+'}';
 
+				system.debug('jsonVar is ' + jsonVar);
+
 				//CALLOUT
 				Map<String, String> connectionDetails = new Map<String, String>();
 				connectionDetails.put('Token', 'Bearer '+mantikiSettings.token__c);
 				HttpResponse response = new HttpResponse();
-				connectionDetails.put('EndPoint', mantikiSettings.End_Point__c+mantikiSettings.Prefix__c+mantikiSettings.Individual__c+'/'+person.Customer_ID__c);
+				connectionDetails.put('EndPoint', mantikiSettings.End_Point__c + mantikiSettings.Prefix__c + mantikiSettings.Individual__c + '/' + person.Customer_ID__c);
 
 				response = InterfaceClass.put(jsonVar, connectionDetails);
 
 				//TREATMENT OF RESPONSE
 				if(response.getStatusCode() >= 400 && response.getStatusCode() <= 500 || response.getStatusCode() == 0) {
+
+					system.debug('callout succeeded');
+
 					// Variables to return to Flow from Apex:
 					flowOutputs.responseStatusCode = response.getStatusCode();
 					flowOutputs.responseMessage = response.getBody();
@@ -155,7 +160,6 @@ public class ContactPermissionsInvocableClass {
 					//Insert Callout Record Sucess:
 					CalloutRecord.insertCalloutRecordSuccess('ContactPermissionsInvocableClass', 'contactPreferences', InterfaceClass.saveRequest, response,null,person.Id);
 					//If the request is successful 'Cancel Reason', 'Winebank State', 'Cancel Date', 'Winebank Balance' and 'Winebank Interest' should be updated on the WineBank membership object:
-
 
 
 					if(person.Contact__r.Account.Store__c == 'vwshop') {

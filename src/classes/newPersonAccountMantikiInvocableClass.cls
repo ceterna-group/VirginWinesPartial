@@ -104,24 +104,30 @@ global without sharing class newPersonAccountMantikiInvocableClass {
 				Id recTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Person Account').getRecordTypeId();
 				System.debug('**** Report type: **** ' + recTypeId); //TO DO DELETE
 
-				newAccount.FirstName = flowInputs[0].firstName;
-				newAccount.PersonBirthdate = flowInputs[0].DateOfBirth;
-				newAccount.LastName = flowInputs[0].lastName;
-				newAccount.PersonEmail = flowInputs[0].emailAddress;
-				newAccount.Store__c = flowInputs[0].store;
-				newAccount.Salutation = flowInputs[0].salutation;
-				newAccount.Corporate__c = false;
-				newAccount.Phone = flowInputs[0].tel1;
-				newAccount.Telephone_2__c = flowInputs[0].tel2;
-				newAccount.Telephone_3__c = flowInputs[0].tel3;
+				newAccount.FirstName 		= flowInputs[0].firstName;
+				newAccount.PersonBirthdate 	= flowInputs[0].DateOfBirth;
+				newAccount.LastName 		= flowInputs[0].lastName;
+				newAccount.PersonEmail 		= flowInputs[0].emailAddress;
+				newAccount.Store__c 		= flowInputs[0].store;
+				newAccount.Salutation 		= flowInputs[0].salutation;
+				newAccount.Corporate__c 	= false;
+				newAccount.Phone 			= flowInputs[0].tel1;
+				newAccount.Telephone_2__c 	= flowInputs[0].tel2;
+				newAccount.Telephone_3__c 	= flowInputs[0].tel3;
 				//newAccount.PersonHomePhone = flowInputs[0].tel2;
 				//newAccount.PersonOtherPhone = flowInputs[0].tel3;
-				newAccount.Sync_Status__c = 'Processing';
+				newAccount.Sync_Status__c 	= 'Processing';
 				newAccount.Allow_Contact__c =  flowInputs[0].AllowMarketingCommunications;
-				newAccount.RecordTypeId =  recTypeId;
+				newAccount.RecordTypeId 	=  recTypeId;
 
 				insert newAccount;
+
+				system.debug('inserted new account');
+				system.debug(newAccount);
 			} else {
+
+				system.debug('updated existing account');
+
 				newAccount = [SELECT FirstName, PersonBirthdate, LastName, PersonEmail, Store__c, Salutation, Phone, PersonHomePhone, PersonOtherPhone, Sync_Status__c, Allow_Contact__c, RecordTypeId FROM Account WHERE Id = :flowInputs[0].accountId];
 				newAccount.Sync_Status__c = 'Processing';
 				update newAccount;
