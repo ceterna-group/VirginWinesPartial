@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10ba72c3-bd1d-4224-bb8f-c85dac724ccb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlluminatedCloud/VirginWines_Partial/OfflineSymbolTable.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IlluminatedCloud/VirginWines_Partial/OfflineSymbolTable.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/newPersonAccountMantikiInvocableClass.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/newPersonAccountMantikiInvocableClass.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CalloutsClass.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/CalloutsClass.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/CalloutsClassTest.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/CalloutsClassTest.cls" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,25 +36,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+        <entry file="file://$PROJECT_DIR$/src/classes/CalloutsClass.cls">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls">
+        <entry file="file://$PROJECT_DIR$/src/classes/CalloutsClassTest.cls">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls">
+        <entry file="file://$PROJECT_DIR$/src/triggers/AccountTrigger.trigger">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/SettingsClass.cls">
+        <entry file="file://$PROJECT_DIR$/src/classes/AccountTriggerHandler.cls">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
         </entry>
@@ -70,11 +67,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js">
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+          <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
         </entry>
       </file>
@@ -127,6 +124,9 @@
       <find>previewing</find>
       <find>customerKeys</find>
       <find>responsePending</find>
+      <find>newpersonaccount</find>
+      <find>personaccount</find>
+      <find>Cancel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,6 +152,8 @@
         <option value="$PROJECT_DIR$/src/classes/newPersonAccountMantikiInvocableClass.cls" />
         <option value="$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls" />
         <option value="$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls" />
+        <option value="$PROJECT_DIR$/src/classes/CalloutsClass.cls" />
+        <option value="$PROJECT_DIR$/src/classes/CalloutsClassTest.cls" />
       </list>
     </option>
   </component>
@@ -185,6 +187,7 @@
                       <entry key="APEXCLASS:ACCOUNTB2BINVOCABLECLASS" value="1564565555392" />
                       <entry key="APEXCLASS:ACCOUNTPROCESS" value="1565087135000" />
                       <entry key="APEXCLASS:CALLOUTINVOCABLECLASSTEST" value="1571933198813" />
+                      <entry key="APEXCLASS:CALLOUTSCLASSTEST" value="1572010063786" />
                       <entry key="APEXCLASS:CONTACTPERMISSIONSINVOCABLECLASS" value="1571933198813" />
                       <entry key="APEXCLASS:EMAILHISTORYCONTROLLER" value="1569248843000" />
                       <entry key="APEXCLASS:EMAILHISTORYCONTROLLERTEST" value="1569398929340" />
@@ -5426,10 +5429,11 @@
       </ProjectWorkspaceSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="-1182" />
+    <option name="y" value="-1080" />
     <option name="width" value="1920" />
-    <option name="height" value="806" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -5441,7 +5445,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -5458,12 +5461,13 @@
               <item name="VirginWines Partial" type="b2602c69:ProjectViewProjectNode" />
               <item name="VirginWines Partial" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="triggers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -5496,41 +5500,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.CalloutInvocableClassTest">
-    <configuration name="AccountProcessTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="connectionName" value="VirginWines Partial" />
-      <option name="connectionType" value="MDAPI" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="VirginWines Partial">
-            <value>
-              <set>
-                <option value="AccountProcessTest" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map />
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Apex Unit Tests.CalloutsClassTest">
     <configuration name="CalloutInvocableClassTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5649,6 +5619,40 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
+    <configuration name="CalloutsClassTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="connectionName" value="VirginWines Partial" />
+      <option name="connectionType" value="MDAPI" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="VirginWines Partial">
+            <value>
+              <set>
+                <option value="CalloutsClassTest" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map />
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <configuration name="EmailHistoryControllerTest" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -5685,11 +5689,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Apex Unit Tests.CalloutsClassTest" />
         <item itemvalue="Apex Unit Tests.CalloutInvocableClassTest" />
         <item itemvalue="Apex Unit Tests.CalloutInvocableClassTest.contactPermissionsSuccessVwshop" />
         <item itemvalue="Apex Unit Tests.CalloutInvocableClassTest.createPersonAccountError" />
         <item itemvalue="Apex Unit Tests.EmailHistoryControllerTest" />
-        <item itemvalue="Apex Unit Tests.AccountProcessTest" />
       </list>
     </recent_temporary>
   </component>
@@ -5728,7 +5732,12 @@
       <workItem from="1569847503990" duration="2641000" />
       <workItem from="1570613906495" duration="203000" />
       <workItem from="1571390828720" duration="450000" />
-      <workItem from="1571931341464" duration="2472000" />
+      <workItem from="1571931341464" duration="2712000" />
+      <workItem from="1571935495827" duration="795000" />
+      <workItem from="1572009312787" duration="1472000" />
+      <workItem from="1572069500300" duration="539000" />
+      <workItem from="1572150445098" duration="246000" />
+      <workItem from="1572351931501" duration="979000" />
     </task>
     <task id="LOCAL-00001" summary="git INIT">
       <created>1563881778322</created>
@@ -5835,28 +5844,17 @@
       <option name="project" value="LOCAL" />
       <updated>1569851551779</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="24.10.2019">
+      <created>1571934296778</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571934296778</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CalloutInvocableClassTest_createPersonAccountError - 2019.10.24 at 16h 45m 10s.xml">
-      <configuration name="CalloutInvocableClassTest.createPersonAccountError" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
-    <history-entry file="CalloutInvocableClassTest - 2019.10.24 at 16h 48m 49s.xml">
-      <configuration name="CalloutInvocableClassTest" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
-    <history-entry file="CalloutInvocableClassTest - 2019.10.24 at 16h 50m 00s.xml">
-      <configuration name="CalloutInvocableClassTest" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
-    <history-entry file="CalloutInvocableClassTest - 2019.10.24 at 16h 53m 15s.xml">
-      <configuration name="CalloutInvocableClassTest" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
-    <history-entry file="CalloutInvocableClassTest_contactPermissionsSuccessVwshop - 2019.10.24 at 16h 54m 23s.xml">
-      <configuration name="CalloutInvocableClassTest.contactPermissionsSuccessVwshop" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
-    <history-entry file="CalloutInvocableClassTest_contactPermissionsSuccessVwshop - 2019.10.24 at 16h 59m 40s.xml">
-      <configuration name="CalloutInvocableClassTest.contactPermissionsSuccessVwshop" configurationId="com.illuminatedcloud.intellij" />
-    </history-entry>
     <history-entry file="CalloutInvocableClassTest_contactPermissionsSuccessVwshop - 2019.10.24 at 17h 00m 54s.xml">
       <configuration name="CalloutInvocableClassTest.contactPermissionsSuccessVwshop" configurationId="com.illuminatedcloud.intellij" />
     </history-entry>
@@ -5869,14 +5867,33 @@
     <history-entry file="CalloutInvocableClassTest - 2019.10.24 at 17h 07m 03s.xml">
       <configuration name="CalloutInvocableClassTest" configurationId="com.illuminatedcloud.intellij" />
     </history-entry>
+    <history-entry file="CalloutInvocableClassTest - 2019.10.24 at 17h 47m 29s.xml">
+      <configuration name="CalloutInvocableClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
+    <history-entry file="CalloutsClassTest - 2019.10.25 at 14h 16m 05s.xml">
+      <configuration name="CalloutsClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
+    <history-entry file="CalloutsClassTest - 2019.10.25 at 14h 20m 32s.xml">
+      <configuration name="CalloutsClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
+    <history-entry file="CalloutsClassTest - 2019.10.25 at 14h 23m 53s.xml">
+      <configuration name="CalloutsClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
+    <history-entry file="CalloutsClassTest - 2019.10.25 at 14h 26m 20s.xml">
+      <configuration name="CalloutsClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
+    <history-entry file="CalloutsClassTest - 2019.11.07 at 12h 25m 07s.xml">
+      <configuration name="CalloutsClassTest" configurationId="com.illuminatedcloud.intellij" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156447000" />
+    <option name="totallyTimeSpent" value="160718000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-1182" y="-1080" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41988555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20181043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -5885,7 +5902,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.49306932" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46831682" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7825465" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -5942,10 +5959,11 @@
     <MESSAGE value="23.09.2019" />
     <MESSAGE value="25.09.2019" />
     <MESSAGE value="30.09.2019" />
-    <option name="LAST_COMMIT_MESSAGE" value="30.09.2019" />
+    <MESSAGE value="24.10.2019" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.10.2019" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/VirginWines_Partial$CalloutInvocableClassTest.null" NAME="VirginWines Partial Coverage Results" MODIFIED="1571933201396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="VirginWines Partial" CONNECTION_NAME="VirginWines Partial" CONNECTION_TYPE="MDAPI" />
+    <SUITE FILE_PATH="coverage/VirginWines_Partial$CalloutsClassTest.null" NAME="VirginWines Partial Coverage Results" MODIFIED="1573129457357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="VirginWines Partial" CONNECTION_NAME="VirginWines Partial" CONNECTION_TYPE="MDAPI" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/triggers/test.fxml">
@@ -5971,11 +5989,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.design">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/triggers/Trig_Lead.trigger">
@@ -5983,10 +6001,6 @@
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Trig_Object_Test.cls">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/triggers/AccountTrigger.trigger">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
@@ -6010,10 +6024,6 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/AccountTriggerHandler.cls">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/MultiRequestMock.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
@@ -6027,68 +6037,80 @@
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.cmp">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistory.css">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryHelper.js">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/WineBank/WineBankHelper.js">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/WineBank/WineBankController.js">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/CalloutsClass.cls">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/WineBank/WineBank.cmp">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryController.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/SettingsClass.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/newPersonAccountMantikiInvocableClass.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/EmailHistory/EmailHistoryController.js">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningDesignFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningStyleFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/AccountB2BInvocableClass.cls">
@@ -6100,28 +6122,28 @@
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/EmailHistoryControllerTest.cls">
-      <provider editor-type-id="text-editor" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/XmlToJson.cls">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/triggers/AccountTrigger.trigger">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/newPersonAccountMantikiInvocableClass.cls">
+    <entry file="file://$PROJECT_DIR$/src/classes/AccountTriggerHandler.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/SettingsClass.cls">
+    <entry file="file://$PROJECT_DIR$/src/classes/CalloutsClass.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/ContactPermissionsInvocableClass.cls">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/CalloutInvocableClassTest.cls">
+    <entry file="file://$PROJECT_DIR$/src/classes/CalloutsClassTest.cls">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
     </entry>
